@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>41EB3B20-99A2-450C-838B-DF4BF04D2D57</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TusurTimetable</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8DD1794E-BF0A-4CBC-B008-5C2A33A03C88</key>
+		<string>https://github.com/sergeybor/tusur-timetable-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TusurTimetable/TusurTimetable.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8DD1794E-BF0A-4CBC-B008-5C2A33A03C88</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sergeybor/tusur-timetable-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8DD1794E-BF0A-4CBC-B008-5C2A33A03C88</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8DD1794E-BF0A-4CBC-B008-5C2A33A03C88</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tusur-timetable-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
