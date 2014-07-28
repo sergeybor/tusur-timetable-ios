@@ -22,16 +22,50 @@
 		8F0ACFAB19506EB000B3643B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0ACF8A19506EB000B3643B /* UIKit.framework */; };
 		8F0ACFB319506EB000B3643B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0ACFB119506EB000B3643B /* InfoPlist.strings */; };
 		8F0ACFB519506EB000B3643B /* TusurTimetableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0ACFB419506EB000B3643B /* TusurTimetableTests.m */; };
+		8F3968D11979702F00495104 /* T3SystemInfo+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3968D01979702F00495104 /* T3SystemInfo+Extension.m */; };
+		8F8F93F41971AC2200BEA05B /* T3DepartmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F93F31971AC2200BEA05B /* T3DepartmentsTableViewController.m */; };
+		8F8F93F81971ACD200BEA05B /* T3DepartmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F93F71971ACD200BEA05B /* T3DepartmentCell.m */; };
+		8F8F93FB1971ACF200BEA05B /* T3DepartmentCell+T3Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F93FA1971ACF200BEA05B /* T3DepartmentCell+T3Department.m */; };
 		8FB866231957395C002BAA29 /* TusurTimetable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866211957395C002BAA29 /* TusurTimetable.xcdatamodeld */; };
-		8FB8662819574A24002BAA29 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8662719574A24002BAA29 /* Department.m */; };
-		8FB8662B19574A24002BAA29 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8662A19574A24002BAA29 /* Group.m */; };
-		8FB8662E19574A24002BAA29 /* Lecturer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8662D19574A24002BAA29 /* Lecturer.m */; };
-		8FB8663119574A24002BAA29 /* Lecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8663019574A24002BAA29 /* Lecture.m */; };
-		8FB8663419574A24002BAA29 /* TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8663319574A24002BAA29 /* TimeTable.m */; };
-		8FB8663719574A24002BAA29 /* Timeslot.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8663619574A24002BAA29 /* Timeslot.m */; };
 		8FB8663C19574AEF002BAA29 /* T3ServerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8663B19574AEF002BAA29 /* T3ServerObject.m */; };
-		8FB8663F19574B79002BAA29 /* T3WebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8663E19574B79002BAA29 /* T3WebClient.m */; };
-		8FB8664219574CC1002BAA29 /* T3WebJSONResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8664119574CC1002BAA29 /* T3WebJSONResponse.m */; };
+		8FB8667A195B323C002BAA29 /* T3Lecturer+Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB86679195B323C002BAA29 /* T3Lecturer+Server.m */; };
+		8FB8667D195B3251002BAA29 /* T3Group+Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8667C195B3251002BAA29 /* T3Group+Server.m */; };
+		8FB86680195B326A002BAA29 /* T3Department+Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8667F195B326A002BAA29 /* T3Department+Server.m */; };
+		8FB8668D19645F6D002BAA29 /* T3DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8668C19645F6D002BAA29 /* T3DownloadManager.m */; };
+		8FB866921964676B002BAA29 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866901964676B002BAA29 /* EGOCache.m */; };
+		8FB866931964676B002BAA29 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 8FB866911964676B002BAA29 /* README.mdown */; };
+		8FB866971965B814002BAA29 /* T3UpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866961965B814002BAA29 /* T3UpdateManager.m */; };
+		8FB866A4196EF78A002BAA29 /* T3MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866A3196EF78A002BAA29 /* T3MainViewController.m */; };
+		8FB866A819704441002BAA29 /* T3BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866A719704441002BAA29 /* T3BaseViewController.m */; };
+		8FB866AB197045A6002BAA29 /* T3BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866AA197045A6002BAA29 /* T3BaseTableViewController.m */; };
+		8FB866AE1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866AD1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.m */; };
+		8FB866B2197048D1002BAA29 /* T3GroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866B1197048D1002BAA29 /* T3GroupsTableViewController.m */; };
+		8FB866B619704C1C002BAA29 /* T3GroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866B519704C1C002BAA29 /* T3GroupCell.m */; };
+		8FB866B919704D79002BAA29 /* T3GroupCell+T3Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB866B819704D79002BAA29 /* T3GroupCell+T3Group.m */; };
+		8FB8F8381980ABDB000110F9 /* T3TimeTable+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F8371980ABDB000110F9 /* T3TimeTable+Extension.m */; };
+		8FB8F84A1982DE35000110F9 /* T3Favourites+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F8491982DE35000110F9 /* T3Favourites+Extension.m */; };
+		8FB8F85019838F9E000110F9 /* T3Lecturer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F84F19838F9E000110F9 /* T3Lecturer+Extension.m */; };
+		8FB8F8581983D121000110F9 /* T3FavouriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F8561983D121000110F9 /* T3FavouriteCell.m */; };
+		8FB8F85D19841B6C000110F9 /* T3SearchGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F85C19841B6C000110F9 /* T3SearchGroupViewController.m */; };
+		8FB8F8611984216A000110F9 /* T3SearchGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F8601984216A000110F9 /* T3SearchGroupCell.m */; };
+		8FD9038B197FC18A00408469 /* T3TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9038A197FC18A00408469 /* T3TimetableViewController.m */; };
+		8FD9038F197FC3FA00408469 /* T3TimetableShortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9038E197FC3FA00408469 /* T3TimetableShortCell.m */; };
+		8FD90392197FC5D300408469 /* T3TimetableFullCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD90391197FC5D300408469 /* T3TimetableFullCell.m */; };
+		8FD90396197FE1D400408469 /* T3TimeTable+Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD90395197FE1D400408469 /* T3TimeTable+Server.m */; };
+		8FD9039F198013F100408469 /* T3Group+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9039E198013F100408469 /* T3Group+Extension.m */; };
+		8FF6AA1419853D4F00B22D36 /* T3LecturersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA1319853D4F00B22D36 /* T3LecturersViewController.m */; };
+		8FF6AA1819853E5F00B22D36 /* T3LecturerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA1719853E5F00B22D36 /* T3LecturerCell.m */; };
+		8FF6AA1C19855E0100B22D36 /* T3PlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA1B19855E0100B22D36 /* T3PlaceholderView.m */; };
+		8FF6AA201985605E00B22D36 /* T3PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6AA1F1985605E00B22D36 /* T3PlaceholderView.xib */; };
+		8FF6AA23198560E800B22D36 /* UIView+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA22198560E800B22D36 /* UIView+Resizing.m */; };
+		8FF6AA2719865CC500B22D36 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA2619865CC500B22D36 /* Reachability.m */; };
+		8FF6AA2A19866E6000B22D36 /* T3UpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA2919866E6000B22D36 /* T3UpdateItem.m */; };
+		8FF6AA4F1986CA8200B22D36 /* T3Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA4E1986CA8200B22D36 /* T3Department.m */; };
+		8FF6AA521986CA8200B22D36 /* T3Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA511986CA8200B22D36 /* T3Group.m */; };
+		8FF6AA551986CA8300B22D36 /* T3Favourites.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA541986CA8300B22D36 /* T3Favourites.m */; };
+		8FF6AA581986CA8300B22D36 /* T3Lecturer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA571986CA8300B22D36 /* T3Lecturer.m */; };
+		8FF6AA5B1986CA8300B22D36 /* T3SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA5A1986CA8300B22D36 /* T3SystemInfo.m */; };
+		8FF6AA5E1986CA8300B22D36 /* T3TimeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6AA5D1986CA8300B22D36 /* T3TimeTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,25 +98,93 @@
 		8F0ACFB019506EB000B3643B /* TusurTimetableTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TusurTimetableTests-Info.plist"; sourceTree = "<group>"; };
 		8F0ACFB219506EB000B3643B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F0ACFB419506EB000B3643B /* TusurTimetableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TusurTimetableTests.m; sourceTree = "<group>"; };
+		8F3968CF1979702F00495104 /* T3SystemInfo+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3SystemInfo+Extension.h"; sourceTree = "<group>"; };
+		8F3968D01979702F00495104 /* T3SystemInfo+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3SystemInfo+Extension.m"; sourceTree = "<group>"; };
+		8F8F93F21971AC2200BEA05B /* T3DepartmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3DepartmentsTableViewController.h; sourceTree = "<group>"; };
+		8F8F93F31971AC2200BEA05B /* T3DepartmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3DepartmentsTableViewController.m; sourceTree = "<group>"; };
+		8F8F93F61971ACD200BEA05B /* T3DepartmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3DepartmentCell.h; sourceTree = "<group>"; };
+		8F8F93F71971ACD200BEA05B /* T3DepartmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3DepartmentCell.m; sourceTree = "<group>"; };
+		8F8F93F91971ACF200BEA05B /* T3DepartmentCell+T3Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3DepartmentCell+T3Department.h"; sourceTree = "<group>"; };
+		8F8F93FA1971ACF200BEA05B /* T3DepartmentCell+T3Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3DepartmentCell+T3Department.m"; sourceTree = "<group>"; };
 		8FB866221957395C002BAA29 /* TusurTimetable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TusurTimetable.xcdatamodel; sourceTree = "<group>"; };
-		8FB8662619574A24002BAA29 /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Department.h; sourceTree = "<group>"; };
-		8FB8662719574A24002BAA29 /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Department.m; sourceTree = "<group>"; };
-		8FB8662919574A24002BAA29 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		8FB8662A19574A24002BAA29 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
-		8FB8662C19574A24002BAA29 /* Lecturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecturer.h; sourceTree = "<group>"; };
-		8FB8662D19574A24002BAA29 /* Lecturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecturer.m; sourceTree = "<group>"; };
-		8FB8662F19574A24002BAA29 /* Lecture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecture.h; sourceTree = "<group>"; };
-		8FB8663019574A24002BAA29 /* Lecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecture.m; sourceTree = "<group>"; };
-		8FB8663219574A24002BAA29 /* TimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeTable.h; sourceTree = "<group>"; };
-		8FB8663319574A24002BAA29 /* TimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeTable.m; sourceTree = "<group>"; };
-		8FB8663519574A24002BAA29 /* Timeslot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeslot.h; sourceTree = "<group>"; };
-		8FB8663619574A24002BAA29 /* Timeslot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeslot.m; sourceTree = "<group>"; };
 		8FB8663A19574AEF002BAA29 /* T3ServerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3ServerObject.h; sourceTree = "<group>"; };
 		8FB8663B19574AEF002BAA29 /* T3ServerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3ServerObject.m; sourceTree = "<group>"; };
-		8FB8663D19574B79002BAA29 /* T3WebClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3WebClient.h; sourceTree = "<group>"; };
-		8FB8663E19574B79002BAA29 /* T3WebClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3WebClient.m; sourceTree = "<group>"; };
-		8FB8664019574CC1002BAA29 /* T3WebJSONResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3WebJSONResponse.h; sourceTree = "<group>"; };
-		8FB8664119574CC1002BAA29 /* T3WebJSONResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3WebJSONResponse.m; sourceTree = "<group>"; };
+		8FB8664619587C86002BAA29 /* Singletone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singletone.h; sourceTree = "<group>"; };
+		8FB86678195B323C002BAA29 /* T3Lecturer+Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3Lecturer+Server.h"; sourceTree = "<group>"; };
+		8FB86679195B323C002BAA29 /* T3Lecturer+Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3Lecturer+Server.m"; sourceTree = "<group>"; };
+		8FB8667B195B3251002BAA29 /* T3Group+Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3Group+Server.h"; sourceTree = "<group>"; };
+		8FB8667C195B3251002BAA29 /* T3Group+Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3Group+Server.m"; sourceTree = "<group>"; };
+		8FB8667E195B326A002BAA29 /* T3Department+Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3Department+Server.h"; sourceTree = "<group>"; };
+		8FB8667F195B326A002BAA29 /* T3Department+Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3Department+Server.m"; sourceTree = "<group>"; };
+		8FB8668B19645F6D002BAA29 /* T3DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3DownloadManager.h; sourceTree = "<group>"; };
+		8FB8668C19645F6D002BAA29 /* T3DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3DownloadManager.m; sourceTree = "<group>"; };
+		8FB8668F1964676B002BAA29 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		8FB866901964676B002BAA29 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		8FB866911964676B002BAA29 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		8FB866951965B814002BAA29 /* T3UpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3UpdateManager.h; sourceTree = "<group>"; };
+		8FB866961965B814002BAA29 /* T3UpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3UpdateManager.m; sourceTree = "<group>"; };
+		8FB866A2196EF78A002BAA29 /* T3MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3MainViewController.h; sourceTree = "<group>"; };
+		8FB866A3196EF78A002BAA29 /* T3MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3MainViewController.m; sourceTree = "<group>"; };
+		8FB866A619704441002BAA29 /* T3BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3BaseViewController.h; sourceTree = "<group>"; };
+		8FB866A719704441002BAA29 /* T3BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3BaseViewController.m; sourceTree = "<group>"; };
+		8FB866A9197045A6002BAA29 /* T3BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3BaseTableViewController.h; sourceTree = "<group>"; };
+		8FB866AA197045A6002BAA29 /* T3BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3BaseTableViewController.m; sourceTree = "<group>"; };
+		8FB866AC1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3BaseTableViewControllerWithFetchedResultController.h; sourceTree = "<group>"; };
+		8FB866AD1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3BaseTableViewControllerWithFetchedResultController.m; sourceTree = "<group>"; };
+		8FB866B0197048D1002BAA29 /* T3GroupsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3GroupsTableViewController.h; sourceTree = "<group>"; };
+		8FB866B1197048D1002BAA29 /* T3GroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3GroupsTableViewController.m; sourceTree = "<group>"; };
+		8FB866B419704C1C002BAA29 /* T3GroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3GroupCell.h; sourceTree = "<group>"; };
+		8FB866B519704C1C002BAA29 /* T3GroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3GroupCell.m; sourceTree = "<group>"; };
+		8FB866B719704D79002BAA29 /* T3GroupCell+T3Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3GroupCell+T3Group.h"; sourceTree = "<group>"; };
+		8FB866B819704D79002BAA29 /* T3GroupCell+T3Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3GroupCell+T3Group.m"; sourceTree = "<group>"; };
+		8FB8F8361980ABDA000110F9 /* T3TimeTable+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3TimeTable+Extension.h"; sourceTree = "<group>"; };
+		8FB8F8371980ABDB000110F9 /* T3TimeTable+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3TimeTable+Extension.m"; sourceTree = "<group>"; };
+		8FB8F8481982DE35000110F9 /* T3Favourites+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3Favourites+Extension.h"; sourceTree = "<group>"; };
+		8FB8F8491982DE35000110F9 /* T3Favourites+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3Favourites+Extension.m"; sourceTree = "<group>"; };
+		8FB8F84E19838F9E000110F9 /* T3Lecturer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3Lecturer+Extension.h"; sourceTree = "<group>"; };
+		8FB8F84F19838F9E000110F9 /* T3Lecturer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3Lecturer+Extension.m"; sourceTree = "<group>"; };
+		8FB8F8551983D121000110F9 /* T3FavouriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3FavouriteCell.h; sourceTree = "<group>"; };
+		8FB8F8561983D121000110F9 /* T3FavouriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3FavouriteCell.m; sourceTree = "<group>"; };
+		8FB8F85B19841B6C000110F9 /* T3SearchGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3SearchGroupViewController.h; sourceTree = "<group>"; };
+		8FB8F85C19841B6C000110F9 /* T3SearchGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3SearchGroupViewController.m; sourceTree = "<group>"; };
+		8FB8F85F1984216A000110F9 /* T3SearchGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3SearchGroupCell.h; sourceTree = "<group>"; };
+		8FB8F8601984216A000110F9 /* T3SearchGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3SearchGroupCell.m; sourceTree = "<group>"; };
+		8FD90389197FC18A00408469 /* T3TimetableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3TimetableViewController.h; sourceTree = "<group>"; };
+		8FD9038A197FC18A00408469 /* T3TimetableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3TimetableViewController.m; sourceTree = "<group>"; };
+		8FD9038D197FC3FA00408469 /* T3TimetableShortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3TimetableShortCell.h; sourceTree = "<group>"; };
+		8FD9038E197FC3FA00408469 /* T3TimetableShortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3TimetableShortCell.m; sourceTree = "<group>"; };
+		8FD90390197FC5D300408469 /* T3TimetableFullCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3TimetableFullCell.h; sourceTree = "<group>"; };
+		8FD90391197FC5D300408469 /* T3TimetableFullCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3TimetableFullCell.m; sourceTree = "<group>"; };
+		8FD90393197FD4B600408469 /* IT3TimetableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IT3TimetableCell.h; sourceTree = "<group>"; };
+		8FD90394197FE1D400408469 /* T3TimeTable+Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3TimeTable+Server.h"; sourceTree = "<group>"; };
+		8FD90395197FE1D400408469 /* T3TimeTable+Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3TimeTable+Server.m"; sourceTree = "<group>"; };
+		8FD9039D198013F100408469 /* T3Group+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "T3Group+Extension.h"; sourceTree = "<group>"; };
+		8FD9039E198013F100408469 /* T3Group+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "T3Group+Extension.m"; sourceTree = "<group>"; };
+		8FF6AA1219853D4F00B22D36 /* T3LecturersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3LecturersViewController.h; sourceTree = "<group>"; };
+		8FF6AA1319853D4F00B22D36 /* T3LecturersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3LecturersViewController.m; sourceTree = "<group>"; };
+		8FF6AA1619853E5F00B22D36 /* T3LecturerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3LecturerCell.h; sourceTree = "<group>"; };
+		8FF6AA1719853E5F00B22D36 /* T3LecturerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3LecturerCell.m; sourceTree = "<group>"; };
+		8FF6AA1A19855E0100B22D36 /* T3PlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3PlaceholderView.h; sourceTree = "<group>"; };
+		8FF6AA1B19855E0100B22D36 /* T3PlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3PlaceholderView.m; sourceTree = "<group>"; };
+		8FF6AA1F1985605E00B22D36 /* T3PlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T3PlaceholderView.xib; sourceTree = "<group>"; };
+		8FF6AA21198560E800B22D36 /* UIView+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Resizing.h"; sourceTree = "<group>"; };
+		8FF6AA22198560E800B22D36 /* UIView+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Resizing.m"; sourceTree = "<group>"; };
+		8FF6AA2519865CC500B22D36 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8FF6AA2619865CC500B22D36 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8FF6AA2819866E6000B22D36 /* T3UpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3UpdateItem.h; sourceTree = "<group>"; };
+		8FF6AA2919866E6000B22D36 /* T3UpdateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3UpdateItem.m; sourceTree = "<group>"; };
+		8FF6AA4D1986CA8200B22D36 /* T3Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3Department.h; sourceTree = "<group>"; };
+		8FF6AA4E1986CA8200B22D36 /* T3Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3Department.m; sourceTree = "<group>"; };
+		8FF6AA501986CA8200B22D36 /* T3Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3Group.h; sourceTree = "<group>"; };
+		8FF6AA511986CA8200B22D36 /* T3Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3Group.m; sourceTree = "<group>"; };
+		8FF6AA531986CA8300B22D36 /* T3Favourites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3Favourites.h; sourceTree = "<group>"; };
+		8FF6AA541986CA8300B22D36 /* T3Favourites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3Favourites.m; sourceTree = "<group>"; };
+		8FF6AA561986CA8300B22D36 /* T3Lecturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3Lecturer.h; sourceTree = "<group>"; };
+		8FF6AA571986CA8300B22D36 /* T3Lecturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3Lecturer.m; sourceTree = "<group>"; };
+		8FF6AA591986CA8300B22D36 /* T3SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3SystemInfo.h; sourceTree = "<group>"; };
+		8FF6AA5A1986CA8300B22D36 /* T3SystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3SystemInfo.m; sourceTree = "<group>"; };
+		8FF6AA5C1986CA8300B22D36 /* T3TimeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3TimeTable.h; sourceTree = "<group>"; };
+		8FF6AA5D1986CA8300B22D36 /* T3TimeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3TimeTable.m; sourceTree = "<group>"; };
 		99A22167648A4D17B6B04D1B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +263,7 @@
 		8F0ACF8D19506EB000B3643B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8FB8664619587C86002BAA29 /* Singletone.h */,
 				8F0ACF8E19506EB000B3643B /* TusurTimetable-Info.plist */,
 				8F0ACF8F19506EB000B3643B /* InfoPlist.strings */,
 				8F0ACF9219506EB000B3643B /* main.m */,
@@ -201,6 +304,8 @@
 		8F0ACFBF1950A40500B3643B /* Cocoa+Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8FF6AA21198560E800B22D36 /* UIView+Resizing.h */,
+				8FF6AA22198560E800B22D36 /* UIView+Resizing.m */,
 			);
 			path = "Cocoa+Categories";
 			sourceTree = "<group>";
@@ -208,7 +313,8 @@
 		8F0ACFC01950A40500B3643B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8FB8663819574A7A002BAA29 /* HttpClient */,
+				8FB866941965B4DB002BAA29 /* UpdateManager */,
+				8FB866811960672F002BAA29 /* Downloader */,
 				8FB8662019573938002BAA29 /* CoreData */,
 			);
 			path = Model;
@@ -217,6 +323,13 @@
 		8F0ACFC21950A40500B3643B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8FF6AA1919855DE700B22D36 /* Placeholders */,
+				8FF6AA1519853E3B00B22D36 /* LecturerCell */,
+				8FB8F85E1984214E000110F9 /* SearchGroupCell */,
+				8FB8F8541983D0F7000110F9 /* FavouriteCell */,
+				8FD9038C197FC3DB00408469 /* TimetableCell */,
+				8F8F93F51971ACBB00BEA05B /* DepartmentCell */,
+				8FB866B319704C03002BAA29 /* GroupCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,56 +344,36 @@
 		8F0ACFC51950A54800B3643B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8FF6AA1119853D2100B22D36 /* Lecturers */,
+				8FB8F85A19841B48000110F9 /* Search */,
+				8FD90388197FC14C00408469 /* Timetable */,
+				8FB866AF197048B5002BAA29 /* Students */,
+				8FB866A5197043B3002BAA29 /* Base */,
+				8FB866A1196EF761002BAA29 /* Main */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8F8F93F51971ACBB00BEA05B /* DepartmentCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F8F93F61971ACD200BEA05B /* T3DepartmentCell.h */,
+				8F8F93F71971ACD200BEA05B /* T3DepartmentCell.m */,
+				8F8F93F91971ACF200BEA05B /* T3DepartmentCell+T3Department.h */,
+				8F8F93FA1971ACF200BEA05B /* T3DepartmentCell+T3Department.m */,
+			);
+			path = DepartmentCell;
 			sourceTree = "<group>";
 		};
 		8FB8662019573938002BAA29 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8FF6AA3A1986CA2600B22D36 /* Entities */,
+				8FB86649195B3005002BAA29 /* Categories */,
 				8FB8663919574AB0002BAA29 /* ServerCategories */,
-				8FB8662519573995002BAA29 /* Categories */,
-				8FB866241957398E002BAA29 /* Entities */,
 				8FB866211957395C002BAA29 /* TusurTimetable.xcdatamodeld */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		8FB866241957398E002BAA29 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				8FB8663519574A24002BAA29 /* Timeslot.h */,
-				8FB8663619574A24002BAA29 /* Timeslot.m */,
-				8FB8663219574A24002BAA29 /* TimeTable.h */,
-				8FB8663319574A24002BAA29 /* TimeTable.m */,
-				8FB8662F19574A24002BAA29 /* Lecture.h */,
-				8FB8663019574A24002BAA29 /* Lecture.m */,
-				8FB8662C19574A24002BAA29 /* Lecturer.h */,
-				8FB8662D19574A24002BAA29 /* Lecturer.m */,
-				8FB8662919574A24002BAA29 /* Group.h */,
-				8FB8662A19574A24002BAA29 /* Group.m */,
-				8FB8662619574A24002BAA29 /* Department.h */,
-				8FB8662719574A24002BAA29 /* Department.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		8FB8662519573995002BAA29 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		8FB8663819574A7A002BAA29 /* HttpClient */ = {
-			isa = PBXGroup;
-			children = (
-				8FB8663D19574B79002BAA29 /* T3WebClient.h */,
-				8FB8663E19574B79002BAA29 /* T3WebClient.m */,
-				8FB8664019574CC1002BAA29 /* T3WebJSONResponse.h */,
-				8FB8664119574CC1002BAA29 /* T3WebJSONResponse.m */,
-			);
-			path = HttpClient;
 			sourceTree = "<group>";
 		};
 		8FB8663919574AB0002BAA29 /* ServerCategories */ = {
@@ -290,6 +383,211 @@
 				8FB8663B19574AEF002BAA29 /* T3ServerObject.m */,
 			);
 			path = ServerCategories;
+			sourceTree = "<group>";
+		};
+		8FB86649195B3005002BAA29 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8FB86678195B323C002BAA29 /* T3Lecturer+Server.h */,
+				8FB86679195B323C002BAA29 /* T3Lecturer+Server.m */,
+				8FB8F84E19838F9E000110F9 /* T3Lecturer+Extension.h */,
+				8FB8F84F19838F9E000110F9 /* T3Lecturer+Extension.m */,
+				8FB8667B195B3251002BAA29 /* T3Group+Server.h */,
+				8FB8667C195B3251002BAA29 /* T3Group+Server.m */,
+				8FD9039D198013F100408469 /* T3Group+Extension.h */,
+				8FD9039E198013F100408469 /* T3Group+Extension.m */,
+				8FB8667E195B326A002BAA29 /* T3Department+Server.h */,
+				8FB8667F195B326A002BAA29 /* T3Department+Server.m */,
+				8F3968CF1979702F00495104 /* T3SystemInfo+Extension.h */,
+				8F3968D01979702F00495104 /* T3SystemInfo+Extension.m */,
+				8FD90394197FE1D400408469 /* T3TimeTable+Server.h */,
+				8FD90395197FE1D400408469 /* T3TimeTable+Server.m */,
+				8FB8F8361980ABDA000110F9 /* T3TimeTable+Extension.h */,
+				8FB8F8371980ABDB000110F9 /* T3TimeTable+Extension.m */,
+				8FB8F8481982DE35000110F9 /* T3Favourites+Extension.h */,
+				8FB8F8491982DE35000110F9 /* T3Favourites+Extension.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		8FB866811960672F002BAA29 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8668E1964676B002BAA29 /* EGOCache */,
+				8FB8668B19645F6D002BAA29 /* T3DownloadManager.h */,
+				8FB8668C19645F6D002BAA29 /* T3DownloadManager.m */,
+			);
+			path = Downloader;
+			sourceTree = "<group>";
+		};
+		8FB8668E1964676B002BAA29 /* EGOCache */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8668F1964676B002BAA29 /* EGOCache.h */,
+				8FB866901964676B002BAA29 /* EGOCache.m */,
+				8FB866911964676B002BAA29 /* README.mdown */,
+			);
+			path = EGOCache;
+			sourceTree = "<group>";
+		};
+		8FB866941965B4DB002BAA29 /* UpdateManager */ = {
+			isa = PBXGroup;
+			children = (
+				8FF6AA2419865CB600B22D36 /* Reachability */,
+				8FB866951965B814002BAA29 /* T3UpdateManager.h */,
+				8FB866961965B814002BAA29 /* T3UpdateManager.m */,
+				8FF6AA2819866E6000B22D36 /* T3UpdateItem.h */,
+				8FF6AA2919866E6000B22D36 /* T3UpdateItem.m */,
+			);
+			path = UpdateManager;
+			sourceTree = "<group>";
+		};
+		8FB866A1196EF761002BAA29 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8FB866A2196EF78A002BAA29 /* T3MainViewController.h */,
+				8FB866A3196EF78A002BAA29 /* T3MainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8FB866A5197043B3002BAA29 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8FB866A619704441002BAA29 /* T3BaseViewController.h */,
+				8FB866A719704441002BAA29 /* T3BaseViewController.m */,
+				8FB866A9197045A6002BAA29 /* T3BaseTableViewController.h */,
+				8FB866AA197045A6002BAA29 /* T3BaseTableViewController.m */,
+				8FB866AC1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.h */,
+				8FB866AD1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8FB866AF197048B5002BAA29 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				8FB866B0197048D1002BAA29 /* T3GroupsTableViewController.h */,
+				8FB866B1197048D1002BAA29 /* T3GroupsTableViewController.m */,
+				8F8F93F21971AC2200BEA05B /* T3DepartmentsTableViewController.h */,
+				8F8F93F31971AC2200BEA05B /* T3DepartmentsTableViewController.m */,
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
+		8FB866B319704C03002BAA29 /* GroupCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FB866B419704C1C002BAA29 /* T3GroupCell.h */,
+				8FB866B519704C1C002BAA29 /* T3GroupCell.m */,
+				8FB866B719704D79002BAA29 /* T3GroupCell+T3Group.h */,
+				8FB866B819704D79002BAA29 /* T3GroupCell+T3Group.m */,
+			);
+			path = GroupCell;
+			sourceTree = "<group>";
+		};
+		8FB8F8541983D0F7000110F9 /* FavouriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F8551983D121000110F9 /* T3FavouriteCell.h */,
+				8FB8F8561983D121000110F9 /* T3FavouriteCell.m */,
+			);
+			path = FavouriteCell;
+			sourceTree = "<group>";
+		};
+		8FB8F85A19841B48000110F9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F85B19841B6C000110F9 /* T3SearchGroupViewController.h */,
+				8FB8F85C19841B6C000110F9 /* T3SearchGroupViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8FB8F85E1984214E000110F9 /* SearchGroupCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F85F1984216A000110F9 /* T3SearchGroupCell.h */,
+				8FB8F8601984216A000110F9 /* T3SearchGroupCell.m */,
+			);
+			path = SearchGroupCell;
+			sourceTree = "<group>";
+		};
+		8FD90388197FC14C00408469 /* Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				8FD90389197FC18A00408469 /* T3TimetableViewController.h */,
+				8FD9038A197FC18A00408469 /* T3TimetableViewController.m */,
+			);
+			path = Timetable;
+			sourceTree = "<group>";
+		};
+		8FD9038C197FC3DB00408469 /* TimetableCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9038D197FC3FA00408469 /* T3TimetableShortCell.h */,
+				8FD9038E197FC3FA00408469 /* T3TimetableShortCell.m */,
+				8FD90390197FC5D300408469 /* T3TimetableFullCell.h */,
+				8FD90391197FC5D300408469 /* T3TimetableFullCell.m */,
+				8FD90393197FD4B600408469 /* IT3TimetableCell.h */,
+			);
+			path = TimetableCell;
+			sourceTree = "<group>";
+		};
+		8FF6AA1119853D2100B22D36 /* Lecturers */ = {
+			isa = PBXGroup;
+			children = (
+				8FF6AA1219853D4F00B22D36 /* T3LecturersViewController.h */,
+				8FF6AA1319853D4F00B22D36 /* T3LecturersViewController.m */,
+			);
+			path = Lecturers;
+			sourceTree = "<group>";
+		};
+		8FF6AA1519853E3B00B22D36 /* LecturerCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FF6AA1619853E5F00B22D36 /* T3LecturerCell.h */,
+				8FF6AA1719853E5F00B22D36 /* T3LecturerCell.m */,
+			);
+			path = LecturerCell;
+			sourceTree = "<group>";
+		};
+		8FF6AA1919855DE700B22D36 /* Placeholders */ = {
+			isa = PBXGroup;
+			children = (
+				8FF6AA1A19855E0100B22D36 /* T3PlaceholderView.h */,
+				8FF6AA1B19855E0100B22D36 /* T3PlaceholderView.m */,
+				8FF6AA1F1985605E00B22D36 /* T3PlaceholderView.xib */,
+			);
+			path = Placeholders;
+			sourceTree = "<group>";
+		};
+		8FF6AA2419865CB600B22D36 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8FF6AA2519865CC500B22D36 /* Reachability.h */,
+				8FF6AA2619865CC500B22D36 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		8FF6AA3A1986CA2600B22D36 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8FF6AA591986CA8300B22D36 /* T3SystemInfo.h */,
+				8FF6AA5C1986CA8300B22D36 /* T3TimeTable.h */,
+				8FF6AA5D1986CA8300B22D36 /* T3TimeTable.m */,
+				8FF6AA5A1986CA8300B22D36 /* T3SystemInfo.m */,
+				8FF6AA561986CA8300B22D36 /* T3Lecturer.h */,
+				8FF6AA571986CA8300B22D36 /* T3Lecturer.m */,
+				8FF6AA531986CA8300B22D36 /* T3Favourites.h */,
+				8FF6AA541986CA8300B22D36 /* T3Favourites.m */,
+				8FF6AA501986CA8200B22D36 /* T3Group.h */,
+				8FF6AA511986CA8200B22D36 /* T3Group.m */,
+				8FF6AA4D1986CA8200B22D36 /* T3Department.h */,
+				8FF6AA4E1986CA8200B22D36 /* T3Department.m */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,9 +670,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F0ACF9D19506EB000B3643B /* Main_iPad.storyboard in Resources */,
+				8FF6AA201985605E00B22D36 /* T3PlaceholderView.xib in Resources */,
 				8F0ACFA219506EB000B3643B /* Images.xcassets in Resources */,
 				8F0ACF9A19506EB000B3643B /* Main_iPhone.storyboard in Resources */,
 				8F0ACF9119506EB000B3643B /* InfoPlist.strings in Resources */,
+				8FB866931964676B002BAA29 /* README.mdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,18 +726,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB8663F19574B79002BAA29 /* T3WebClient.m in Sources */,
-				8FB8663119574A24002BAA29 /* Lecture.m in Sources */,
+				8FB8F8611984216A000110F9 /* T3SearchGroupCell.m in Sources */,
+				8FB8F8381980ABDB000110F9 /* T3TimeTable+Extension.m in Sources */,
+				8FB866A4196EF78A002BAA29 /* T3MainViewController.m in Sources */,
 				8FB8663C19574AEF002BAA29 /* T3ServerObject.m in Sources */,
-				8FB8664219574CC1002BAA29 /* T3WebJSONResponse.m in Sources */,
-				8FB8662819574A24002BAA29 /* Department.m in Sources */,
-				8FB8663719574A24002BAA29 /* Timeslot.m in Sources */,
-				8FB8662E19574A24002BAA29 /* Lecturer.m in Sources */,
-				8FB8663419574A24002BAA29 /* TimeTable.m in Sources */,
 				8FB866231957395C002BAA29 /* TusurTimetable.xcdatamodeld in Sources */,
-				8FB8662B19574A24002BAA29 /* Group.m in Sources */,
+				8FB8668D19645F6D002BAA29 /* T3DownloadManager.m in Sources */,
+				8FF6AA23198560E800B22D36 /* UIView+Resizing.m in Sources */,
+				8FF6AA551986CA8300B22D36 /* T3Favourites.m in Sources */,
+				8FB8F85D19841B6C000110F9 /* T3SearchGroupViewController.m in Sources */,
 				8F0ACF9319506EB000B3643B /* main.m in Sources */,
+				8FF6AA1C19855E0100B22D36 /* T3PlaceholderView.m in Sources */,
+				8FB8F85019838F9E000110F9 /* T3Lecturer+Extension.m in Sources */,
+				8FB8667D195B3251002BAA29 /* T3Group+Server.m in Sources */,
+				8FB8667A195B323C002BAA29 /* T3Lecturer+Server.m in Sources */,
+				8FB8F84A1982DE35000110F9 /* T3Favourites+Extension.m in Sources */,
+				8FB866971965B814002BAA29 /* T3UpdateManager.m in Sources */,
+				8FF6AA4F1986CA8200B22D36 /* T3Department.m in Sources */,
+				8FF6AA1419853D4F00B22D36 /* T3LecturersViewController.m in Sources */,
+				8FF6AA5E1986CA8300B22D36 /* T3TimeTable.m in Sources */,
+				8F8F93FB1971ACF200BEA05B /* T3DepartmentCell+T3Department.m in Sources */,
+				8FD90392197FC5D300408469 /* T3TimetableFullCell.m in Sources */,
+				8FF6AA521986CA8200B22D36 /* T3Group.m in Sources */,
+				8FB866AE1970465D002BAA29 /* T3BaseTableViewControllerWithFetchedResultController.m in Sources */,
+				8F8F93F41971AC2200BEA05B /* T3DepartmentsTableViewController.m in Sources */,
+				8FB866B919704D79002BAA29 /* T3GroupCell+T3Group.m in Sources */,
+				8FF6AA581986CA8300B22D36 /* T3Lecturer.m in Sources */,
+				8FF6AA2A19866E6000B22D36 /* T3UpdateItem.m in Sources */,
+				8FD90396197FE1D400408469 /* T3TimeTable+Server.m in Sources */,
+				8F8F93F81971ACD200BEA05B /* T3DepartmentCell.m in Sources */,
+				8F3968D11979702F00495104 /* T3SystemInfo+Extension.m in Sources */,
+				8FB8F8581983D121000110F9 /* T3FavouriteCell.m in Sources */,
+				8FB866AB197045A6002BAA29 /* T3BaseTableViewController.m in Sources */,
+				8FB866A819704441002BAA29 /* T3BaseViewController.m in Sources */,
+				8FB866B619704C1C002BAA29 /* T3GroupCell.m in Sources */,
+				8FB866921964676B002BAA29 /* EGOCache.m in Sources */,
+				8FD9039F198013F100408469 /* T3Group+Extension.m in Sources */,
+				8FF6AA2719865CC500B22D36 /* Reachability.m in Sources */,
+				8FF6AA5B1986CA8300B22D36 /* T3SystemInfo.m in Sources */,
+				8FB86680195B326A002BAA29 /* T3Department+Server.m in Sources */,
+				8FB866B2197048D1002BAA29 /* T3GroupsTableViewController.m in Sources */,
+				8FF6AA1819853E5F00B22D36 /* T3LecturerCell.m in Sources */,
 				8F0ACF9719506EB000B3643B /* T3AppDelegate.m in Sources */,
+				8FD9038F197FC3FA00408469 /* T3TimetableShortCell.m in Sources */,
+				8FD9038B197FC18A00408469 /* T3TimetableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

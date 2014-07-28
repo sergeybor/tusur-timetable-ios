@@ -8,5 +8,6 @@
 @interface T3AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (copy, nonatomic) void(^backgroundTransferCompletionHandler)();
 
 @end

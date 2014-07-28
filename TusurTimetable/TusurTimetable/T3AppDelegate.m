@@ -10,6 +10,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
     return YES;
 }
 							
@@ -38,6 +41,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"Save completionHandler");
+    self.backgroundTransferCompletionHandler = completionHandler;
+    
 }
 
 @end
