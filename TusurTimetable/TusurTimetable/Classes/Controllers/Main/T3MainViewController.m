@@ -46,8 +46,22 @@ NSString *const T3FavouriteCellReussableIdentifier = @"FavouriteCell";
 {
     [super viewWillAppear:animated];
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
     [self loadItems];
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 #pragma mark - UITableViewDelegate

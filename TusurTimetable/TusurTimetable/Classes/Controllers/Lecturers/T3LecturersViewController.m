@@ -32,6 +32,9 @@ NSString *const T3LecturerToTimetableSegue = @"LecturerToTimetableSegue";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Преподователи";
+    
     [self setupFetchedResultController];
     [self checkIfNeedLoadAndLoad];
 }

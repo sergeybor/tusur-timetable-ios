@@ -32,4 +32,15 @@
     
 }
 
+- (void)showAlertWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                    message:error.localizedDescription
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ок"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+}
+
 @end

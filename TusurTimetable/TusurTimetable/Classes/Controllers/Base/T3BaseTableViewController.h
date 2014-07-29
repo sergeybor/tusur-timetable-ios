@@ -11,5 +11,6 @@
 @interface T3BaseTableViewController : UITableViewController
 
 - (void)showPlaceholderWithError:(NSError *)error;
+- (void)showAlertWithError:(NSError *)error;
 
 @end

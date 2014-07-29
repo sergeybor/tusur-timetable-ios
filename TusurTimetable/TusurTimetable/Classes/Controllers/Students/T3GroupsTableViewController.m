@@ -28,6 +28,7 @@ NSString *const T3GroupToTimetableSegue = @"GroupToTimetableSegue";
 {
     [super viewDidLoad];
     [self setupFetchedResultController];
+    self.navigationItem.title = @"Группы";
 }
 
 #pragma mark - Model Helpers

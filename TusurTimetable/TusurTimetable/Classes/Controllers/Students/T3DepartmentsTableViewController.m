@@ -31,6 +31,8 @@ NSString *const T3DepartmentToGroupsSegue = @"DepartmentToGroups";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Факультеты";
     [self setupFetchedResultController];
     [self checkIfNeedLoadAndLoad];
 }

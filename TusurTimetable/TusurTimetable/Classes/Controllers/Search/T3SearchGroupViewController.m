@@ -28,6 +28,7 @@ NSString *const T3SearchGroupToTimetableSegue = @"SearchGroupToTimetableSegue";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"Поиск группы";
     [self setupFetchedResultController];
 }
 

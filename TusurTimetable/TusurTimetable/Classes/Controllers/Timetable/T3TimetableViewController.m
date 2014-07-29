@@ -49,6 +49,7 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     [super viewWillAppear:animated];
     
     [self setupFavouriteButton];
+    self.navigationItem.title = [NSString stringWithFormat:@"Гр. %@", self.group.name];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
