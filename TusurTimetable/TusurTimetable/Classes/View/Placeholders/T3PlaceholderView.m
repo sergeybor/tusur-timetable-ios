@@ -66,7 +66,7 @@ const CGFloat T3PVButtonTitleBottomInsetCorrection = 3.0f;
 
 + (void)showError:(NSError *)error inView:(UIView *)hostView buttonTapBlock:(T3PlaceholderButtonTapBlock)buttonTapBlock
 {
-    NSDictionary *params = @{T3PlaceholderMessage  :@"Timetable",
+    NSDictionary *params = @{T3PlaceholderMessage  :@"Ошибка",
                              T3PlaceholderDescription:error.localizedDescription,
                              T3PlaceholderButtonTitle:NSLocalizedStringFromTable(@"Try again", @"Errors", nil)
                              };
@@ -125,21 +125,14 @@ const CGFloat T3PVButtonTitleBottomInsetCorrection = 3.0f;
     return NO;
 }
 
-- (void)awakeFromNib
-{
-	[super awakeFromNib];
-	
-//    [self.button setBackgroundImage:[UIImage whiteButtonImage] forState:UIControlStateNormal];
-//    [self.button setBackgroundImage:[UIImage whiteButtonHighlightedImage] forState:UIControlStateHighlighted];
-}
-
 - (void)setupWithParams:(NSDictionary *)params
 {
+    
 	[self setupLabel:self.titleLabel withText:params[T3PlaceholderMessage]];
 	[self setupLabel:self.descriptionLabel withText:params[T3PlaceholderDescription]];
-	[self setupButton:self.button
-            withTitle:params[T3PlaceholderButtonTitle]
-                 icon:params[T3PlaceholderButtonIcon]];
+//	[self setupButton:self.button
+//            withTitle:params[T3PlaceholderButtonTitle]
+//                 icon:params[T3PlaceholderButtonIcon]];
 	
 	[self performLayout];
 }

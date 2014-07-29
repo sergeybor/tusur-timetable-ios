@@ -16,10 +16,11 @@ typedef void (^LoadCompleteBlock)(NSError *error);
 
 + (T3UpdateManager *)defaultUpdateManager;
 
-- (void)updateShedule;
 - (void)loadGroups:(LoadCompleteBlock)complite;
 - (void)loadLecturers:(LoadCompleteBlock)complite;
 - (void)loadTimetableForGroup:(T3Group *)group complite:(LoadCompleteBlock)complite;
+
+- (void)updateFavouriteWithComplite:(LoadCompleteBlock)complite;
 
 - (void)cancelLoadGroups;
 - (void)cancelLoadLecturers;

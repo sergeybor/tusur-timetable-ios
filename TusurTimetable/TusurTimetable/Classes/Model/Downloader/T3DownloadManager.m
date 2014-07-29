@@ -231,6 +231,9 @@
         NSLog(@"Task ; %@  complete successfully", task);
     } else {
         NSLog(@"Task : %@  complete with error : %@", task, [error localizedDescription]);
+        if (_errorBlock) {
+            _errorBlock([task taskIdentifier], error);
+        }
     }
 
     [_sessionTaskList removeObject:task];
@@ -248,11 +251,6 @@
     }
 
     NSLog(@"Alltask are finished");
-}
-
-- (void)print
-{
-    NSLog(@"DM===%@", _sessionTaskList.description);
 }
 
 @end

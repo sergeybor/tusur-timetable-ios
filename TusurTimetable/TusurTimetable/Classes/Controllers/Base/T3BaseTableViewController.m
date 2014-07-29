@@ -27,7 +27,7 @@
 - (void)showPlaceholderWithError:(NSError *)error
 {
     [T3PlaceholderView showError:error
-                          inView:self.view
+                          inView:self.tableView
                   buttonTapBlock:nil];
     
 }

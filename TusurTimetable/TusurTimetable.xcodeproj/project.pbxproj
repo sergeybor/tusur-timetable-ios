@@ -640,6 +640,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Katte;
 				TargetAttributes = {
+					8F0ACF8219506EB000B3643B = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					8F0ACFA619506EB000B3643B = {
 						TestTargetID = 8F0ACF8219506EB000B3643B;
 					};

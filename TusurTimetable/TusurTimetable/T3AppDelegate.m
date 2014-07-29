@@ -4,6 +4,7 @@
 //
 
 #import "T3AppDelegate.h"
+#import "T3UpdateManager.h"
 
 @implementation T3AppDelegate
 
@@ -12,6 +13,11 @@
     // Override point for customization after application launch.
     
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    [T3UpdateManager defaultUpdateManager];
+    
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0){
+        [application setMinimumBackgroundFetchInterval:60 * 60 * 24];
+    }
     
     return YES;
 }
@@ -47,6 +53,28 @@
 {
     NSLog(@"Save completionHandler");
     self.backgroundTransferCompletionHandler = completionHandler;
+    
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"Background fetch started...");
+    
+    //---do background fetch here---
+    // You have up to 30 seconds to perform the fetch
+    
+    //BOOL downloadSuccessful = YES;
+    
+    [[T3UpdateManager defaultUpdateManager] updateFavouriteWithComplite:^(NSError *error) {
+         NSLog(@"Background fetch completed...");
+        if (error) {
+            //---set the flag that download is not successful---
+            completionHandler(UIBackgroundFetchResultFailed);
+        } else {
+            //---set the flag that data is successfully downloaded---
+            completionHandler(UIBackgroundFetchResultNewData);
+        }
+    }];
     
 }
 

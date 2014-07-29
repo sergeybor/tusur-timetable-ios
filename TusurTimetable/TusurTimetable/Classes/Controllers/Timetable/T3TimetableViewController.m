@@ -18,6 +18,8 @@
 #import "T3Favourites+Extension.h"
 
 #import "SVProgressHUD.h"
+#import "T3PlaceholderView.h"
+
 
 NSString *const T3TimetableShortCellReussableIdentifier = @"TimetableShortCell";
 NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
@@ -146,15 +148,23 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     NSString *message = nil;
     if ([self.group isFavourite]) {
         [T3Favourites removeGroup:self.group];
-        message = @"Removed";
+        message = @"удалена из закладок";
     } else {
         [T3Favourites addGroup:self.group];
-        message = @"Added";
+        message = @"добавлена в закладки";
     }
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     
     [self setupFavouriteButton];
-        // show message;
+    
+    message = [NSString stringWithFormat:@"Группа %@ %@", self.group.name, message];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Закладки"
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ок"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 #pragma mark - helpers
@@ -166,10 +176,10 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     //TODO: add check if need load
     [SVProgressHUD show];
     [self.group updateTimetableFromServerWithCompletion:^(NSError *error) {
+        [SVProgressHUD dismiss];
         if (error) {
             [wself showPlaceholderWithError:error];
         }
-        [SVProgressHUD dismiss];
     }];
 }
 

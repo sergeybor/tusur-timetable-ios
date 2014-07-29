@@ -51,6 +51,11 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
     return instance;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
+}
+
 - (void)configure
 {
     [self configureSession];
@@ -63,17 +68,12 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
 {
     NSTimeInterval secondsPerDay = 60 * 60 * 24;
     
-    NSDate *d = [NSDate dateWithTimeIntervalSinceNow:secondsPerDay];
+    self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:secondsPerDay
+                                                        target:self
+                                                      selector:@selector(onUpdateTimerTick:)
+                                                      userInfo:nil
+                                                       repeats:YES];
     
-    self.updateTimer = [[NSTimer alloc] initWithFireDate:d
-                                                interval:secondsPerDay
-                                                  target:self
-                                                selector:@selector(onUpdateTimerTick:)
-                                                userInfo:nil
-                                                 repeats:YES];
-    
-    NSRunLoop *runner = [NSRunLoop currentRunLoop];
-    [runner addTimer:self.updateTimer forMode: NSDefaultRunLoopMode];
 }
 
 - (void)configureReachability
@@ -155,11 +155,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
                                                    objectID:groupID
                                                    complite:complite];
     [self.tasks setObject:item forKey:@(taskId)];
-}
-
-- (void)updateShedule
-{
-    [self loadGroups];
 }
 
 - (void)loadGroups
@@ -250,8 +245,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
     
     if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)])
     {
-        NSLog(@"Multitasking Supported");
-        
         __block UIBackgroundTaskIdentifier background_task;
         background_task = [application beginBackgroundTaskWithExpirationHandler:^ {
             
@@ -315,10 +308,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
             });
         });
     }
-    else
-    {
-        NSLog(@"Multitasking Not Supported");
-    }
     
 }
 
@@ -328,8 +317,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
     
     if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)])
     {
-        NSLog(@"Multitasking Supported");
-        
         __block UIBackgroundTaskIdentifier background_task;
         background_task = [application beginBackgroundTaskWithExpirationHandler:^ {
             
@@ -390,10 +377,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
             });
         });
     }
-    else
-    {
-        NSLog(@"Multitasking Not Supported");
-    }
     
 }
 
@@ -409,8 +392,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
     
     if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)])
     {
-        NSLog(@"Multitasking Supported");
-        
         __block UIBackgroundTaskIdentifier background_task;
         background_task = [application beginBackgroundTaskWithExpirationHandler:^ {
             
@@ -501,10 +482,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
             });
         });
     }
-    else
-    {
-        NSLog(@"Multitasking Not Supported");
-    }
 
 }
 
@@ -567,15 +544,19 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
 
 #pragma mark - favourites update
 
--(void)onUpdateTimerTick:(NSTimer *)timer
+- (void)updateFavouriteWithComplite:(LoadCompleteBlock)complite
 {
-    [self startUpdateFavouritesInTime:YES];
+    [self startUpdateFavouritesInTime:YES complite:complite];
 }
 
-- (void)startUpdateFavouritesInTime:(BOOL)inTime
+-(void)onUpdateTimerTick:(NSTimer *)timer
+{
+    [self startUpdateFavouritesInTime:YES complite:nil];
+}
+
+- (void)startUpdateFavouritesInTime:(BOOL)inTime complite:(LoadCompleteBlock)complite
 {
     NSArray *allFavourites = nil;
-    
     if (inTime) {
         allFavourites = [T3Favourites findAll];
         
@@ -590,16 +571,24 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
     }
 
     
-    if ([allFavourites count] == 0)
+    if ([allFavourites count] == 0) {
+        if (complite)
+            complite(nil);
         return;
+    }
     
     
-    if ([self.hostReachability currentReachabilityStatus] == NotReachable)
-        return;
+    
+//    if ([self.hostReachability currentReachabilityStatus] == NotReachable) {
+//        if (complite)
+//            complite(nil);
+//        return;
+//    }
     
     for (T3Favourites *favourite in allFavourites) {
         
         if ([favourite.objectType integerValue] == T3FavouriteGroup) {
+            
             [self loadTimetableForGroupId:favourite.serverID fileUrl:favourite.fileUrl complite:^(NSError *error) {
                 
                 if (!error) {
@@ -608,7 +597,9 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
                 } else {
                     // TODO : do something
                 }
-                
+
+                if (complite)
+                    complite(error);
             }];
         }
     }
@@ -619,7 +610,7 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
 - (void)reachabilityChanged:(NSNotification *)note
 {
 	if ([self.hostReachability currentReachabilityStatus] != NotReachable) {
-        [self startUpdateFavouritesInTime:NO];
+        [self startUpdateFavouritesInTime:NO complite:nil];
     }
         
 }
