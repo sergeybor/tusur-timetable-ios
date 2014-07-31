@@ -67,7 +67,7 @@ NSString *const T3GroupToTimetableSegue = @"GroupToTimetableSegue";
     NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:section];
     T3Group *group = [self.fetchedResultsController objectAtIndexPath:path];
     
-    return [NSString stringWithFormat:@"%i-й курс", [group.year integerValue]];
+    return [NSString stringWithFormat:@"   %i-й курс", [group.year integerValue]];
 }
 
 #pragma mark - segue

@@ -7,11 +7,12 @@
 //
 
 #import "T3DepartmentCell.h"
+#import "T3PositionedTableCell.h"
 
 @class T3Department;
 
 @interface T3DepartmentCell (T3Department)
 
-- (void)configureForDepartment:(T3Department *)department;
+- (void)configureForDepartment:(T3Department *)department cellPosition:(T3CellPosition)cellPosition;
 
 @end

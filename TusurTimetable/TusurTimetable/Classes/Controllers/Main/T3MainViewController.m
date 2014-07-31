@@ -16,12 +16,18 @@
 
 #import "T3TimetableViewController.h"
 
+#import "UITableView+CellPosition.h"
+
 NSString *const T3FavouriteCellReussableIdentifier = @"FavouriteCell";
 
 @interface T3MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *items;
+
+@property (nonatomic, weak) IBOutlet UIButton *studentsButton;
+@property (nonatomic, weak) IBOutlet UIButton *teachersButton;
+
 @end
 
 @implementation T3MainViewController
@@ -40,6 +46,12 @@ NSString *const T3FavouriteCellReussableIdentifier = @"FavouriteCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setupButtons];
+    
+    UINib *userCellNib = [UINib nibWithNibName:NSStringFromClass([T3FavouriteCell class]) bundle:nil];
+    [self.tableView registerNib:userCellNib forCellReuseIdentifier:T3FavouriteCellReussableIdentifier];
+    self.tableView.rowHeight = [T3FavouriteCell cellHeight];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,12 +101,10 @@ NSString *const T3FavouriteCellReussableIdentifier = @"FavouriteCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     T3FavouriteCell *favouriteCell = [self.tableView dequeueReusableCellWithIdentifier:T3FavouriteCellReussableIdentifier];
-    if (!favouriteCell) {
-        favouriteCell = [[T3FavouriteCell alloc] initWithReuseIdentifier:T3FavouriteCellReussableIdentifier];
-    }
     
     NSManagedObject *item = [self.items objectAtIndex:indexPath.row];
-    [favouriteCell configureWithItem:item];
+    T3CellPosition cellPosition = [self.tableView positionForCellAtIndexPath:indexPath];
+    [favouriteCell configureWithItem:item cellPosition:cellPosition];
     
     return favouriteCell;
 }
@@ -144,6 +154,14 @@ NSString *const T3FavouriteCellReussableIdentifier = @"FavouriteCell";
     }
     
     [self.navigationController pushViewController:timetableViewController animated:YES];
+}
+
+#pragma mark - UI helpers
+
+- (void)setupButtons
+{
+    self.studentsButton.layer.cornerRadius = 10;
+    self.teachersButton.layer.cornerRadius = 10;
 }
 
 @end

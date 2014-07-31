@@ -12,5 +12,6 @@
 
 - (void)showPlaceholderWithError:(NSError *)error;
 - (void)showAlertWithError:(NSError *)error;
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end

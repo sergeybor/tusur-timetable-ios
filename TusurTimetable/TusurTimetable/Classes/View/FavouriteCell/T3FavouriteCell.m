@@ -12,24 +12,27 @@
 
 @implementation T3FavouriteCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier
++ (T3FavouriteCell *)favouriteCell
 {
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    if (self) {
-    
-    }
-    return self;
+    T3FavouriteCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"T3FavouriteCell" owner:nil options:nil] objectAtIndex:0];
+    return cell;
 }
 
-- (void)configureWithItem:(NSManagedObject *)item
+- (void)configureWithItem:(NSManagedObject *)item cellPosition:(T3CellPosition)cellPosition
 {
     if ([item isKindOfClass:[T3Group class]]) {
-        self.textLabel.text = ((T3Group *)item).name;
+        self.nameLabel.text = ((T3Group *)item).name;
         
     } else if ([item isKindOfClass:[T3Lecturer class]]) {
-        self.textLabel.text = ((T3Lecturer *)item).name;
+        self.nameLabel.text = ((T3Lecturer *)item).name;
     }
     
+    [self updateWithPosition:cellPosition];
+}
+
++ (CGFloat)cellHeight
+{
+    return 44.0;
 }
 
 @end

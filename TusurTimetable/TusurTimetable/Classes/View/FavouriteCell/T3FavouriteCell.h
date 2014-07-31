@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "T3PositionedTableCell.h"
 
-@interface T3FavouriteCell : UITableViewCell
+@interface T3FavouriteCell : T3PositionedTableCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
-- (void)configureWithItem:(NSManagedObject *)item;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+
++ (T3FavouriteCell *)favouriteCell;
+- (void)configureWithItem:(NSManagedObject *)item cellPosition:(T3CellPosition)cellPosition;
++ (CGFloat)cellHeight;
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "T3PositionedTableCell.h"
 
-@interface T3DepartmentCell : UITableViewCell
+@interface T3DepartmentCell : T3PositionedTableCell
 
 @property (nonatomic, weak) IBOutlet UILabel *departmentNameLabel;
 

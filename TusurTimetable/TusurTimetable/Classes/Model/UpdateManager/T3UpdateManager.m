@@ -577,8 +577,6 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
         return;
     }
     
-    
-    
 //    if ([self.hostReachability currentReachabilityStatus] == NotReachable) {
 //        if (complite)
 //            complite(nil);

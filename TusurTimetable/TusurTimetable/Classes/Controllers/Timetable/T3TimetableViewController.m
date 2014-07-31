@@ -26,6 +26,7 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
 
 @interface T3TimetableViewController ()
 
+@property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *segmentedControl;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
 
@@ -40,6 +41,7 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     [super viewDidLoad];
     [self setupFetchedResultController];
     [self checkIfNeedLoadAndLoad];
+    [self setupHeader];
     
     self.cellsWithFullInfo = [NSMutableArray array];
 }
@@ -168,6 +170,20 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     [alert show];
 }
 
+- (IBAction)onAlertButtonTap:(id)sender
+{
+    [self showAlertWithTitle:@"Ошибка!" message:@"Не удалось загрузить новую версию расписания"];
+}
+
+#pragma mark - Scroll
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGRect rect = self.tableView.tableHeaderView.frame;
+    rect.origin.y = MIN(0, self.tableView.contentOffset.y);
+    self.tableView.tableHeaderView.frame = rect;
+}
+
 #pragma mark - helpers
 
 - (void)checkIfNeedLoadAndLoad
@@ -175,11 +191,13 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     __weak T3TimetableViewController *wself = self;
     
     //TODO: add check if need load
+    [self removeErrorSignInNavigationBar];
     [SVProgressHUD show];
     [self.group updateTimetableFromServerWithCompletion:^(NSError *error) {
         [SVProgressHUD dismiss];
         if (error) {
-            [wself showPlaceholderWithError:error];
+            [wself showAlertWithError:error];
+            [wself setupErrorSignInNavigationBar];
         }
     }];
 }
@@ -191,6 +209,31 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     } else {
         [self.addButton setTitle:@"+" forState:UIControlStateNormal];
     }
+}
+
+- (void)setupErrorSignInNavigationBar
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"!" style:UIBarButtonItemStylePlain target:self action:@selector(onAlertButtonTap:)];
+}
+
+- (void)removeErrorSignInNavigationBar
+{
+    self.navigationItem.rightBarButtonItem = nil;
+}
+
+- (void)setupHeader
+{
+//    CGFloat dummyViewHeight = 68.0;
+//    UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, dummyViewHeight)];
+//    self.tableView.tableHeaderView = dummyView;
+ //   [self.view.superview addSubview:self.headerView];
+  
+//    [self.tableView insertSubview:self.headerView atIndex:[self.tableView.subviews count]-1];
+    
+//    self.tableView.tableHeaderView = nil;
+//    self.tableView.contentInset = UIEdgeInsetsMake(dummyViewHeight, 0, 0, 0);
+    
+    
 }
 
 @end

@@ -11,9 +11,11 @@
 
 @implementation T3DepartmentCell (T3Department)
 
-- (void)configureForDepartment:(T3Department *)department
+- (void)configureForDepartment:(T3Department *)department cellPosition:(T3CellPosition)cellPosition
 {
     self.departmentNameLabel.text = department.name;
+    
+    [self updateWithPosition:cellPosition];
 }
 
 
