@@ -21,5 +21,6 @@
 @property (assign, nonatomic) T3CellPosition curCellPosition;
 
 - (void)updateWithPosition:(T3CellPosition)pos;
+- (void)setBackgroundViewColor:(UIColor *)color;
 
 @end

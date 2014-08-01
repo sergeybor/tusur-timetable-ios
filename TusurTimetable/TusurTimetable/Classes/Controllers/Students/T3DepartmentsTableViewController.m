@@ -18,7 +18,7 @@
 
 #import "SVProgressHUD.h"
 #import "T3PlaceholderView.h"
-#import "UITableView+CellPosition.h"
+
 
 NSString *const T3DepartmentCellReussableIdentifier = @"DepartmentCell";
 NSString *const T3DepartmentToGroupsSegue = @"DepartmentToGroups";
@@ -70,9 +70,7 @@ NSString *const T3DepartmentToGroupsSegue = @"DepartmentToGroups";
     
     T3Department *department = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    T3CellPosition cellPosition = [self.tableView positionForCellAtIndexPath:indexPath];
-    
-    [cell configureForDepartment:department cellPosition:cellPosition];
+    [cell configureForDepartment:department];
     
     return cell;
 }

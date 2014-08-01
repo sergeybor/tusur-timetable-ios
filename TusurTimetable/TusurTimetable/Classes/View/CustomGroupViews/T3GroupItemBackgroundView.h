@@ -7,18 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "T3GroupItemPosition.h"
+#import "T3GroupItemView.h"
 
-@interface T3GroupItemBackgroundView : UIView
-
-@property (strong, nonatomic) UIImage *topItemBgImage;
-@property (strong, nonatomic) UIImage *middleItemBgImage;
-@property (strong, nonatomic) UIImage *bottomItemBgImage;
-@property (strong, nonatomic) UIImage *fullItemBgImage;
+@interface T3GroupItemBackgroundView : T3GroupItemView
 
 /**
  Separator view will be placed at the bottom of the view.
- By default it is UIView with height = 1, width = self.frame.size.width - 2, background color = 0xdfe9ed, alpha = 1.
+ By default it is UIView with height = 1, width = self.frame.size.width - 0, background color = white, alpha = 1.
  */
 @property (strong, nonatomic) UIView *separatorView;
 
@@ -27,7 +22,7 @@
  */
 @property (assign, nonatomic) BOOL showsSeparator;
 
-
-- (void)changePosition:(T3CellPosition)position;
+- (void)setupWithViewColor:(UIColor *)selColor cornerRadiuses:(CGSize)radiuses;
+- (void)changeCellPosition:(T3CellPosition)curCellPos;
 
 @end

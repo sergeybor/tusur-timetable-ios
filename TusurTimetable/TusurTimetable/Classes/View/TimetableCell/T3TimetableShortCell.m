@@ -11,30 +11,9 @@
 
 @implementation T3TimetableShortCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
+#pragma mark - T3TimetableCell
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-#pragma mark - IT3TimetableCell
-
-- (void)configureWithTimetable:(T3TimeTable *)timetable
+- (void)configureWithTimetable:(T3TimeTable *)timetable cellPosition:(T3CellPosition)cellPosition
 {
     self.numberLabel.text = [NSString stringWithFormat:@"%i", [timetable.lessonNumber integerValue]];
     self.timeLabel.text = [timetable stringLessonTime];
@@ -42,6 +21,9 @@
     self.roomLabel.text = timetable.lectureHall;
     self.teacherLabel.text = timetable.teacher;
     self.shortNameLabel.text = timetable.shortName;
+    
+    [self setupBGColorToKind:timetable];
+    [self updateWithPosition:cellPosition];
 }
 
 + (BOOL)shouldExpandForItem:(T3TimeTable *)timetable

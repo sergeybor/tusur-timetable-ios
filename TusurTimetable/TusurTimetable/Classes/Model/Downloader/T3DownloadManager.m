@@ -89,9 +89,12 @@
         
     } else {
         
-        NSURL *downloadURL = [NSURL URLWithString:downloadURLString];
+        NSString* encodedURLString = [downloadURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURL *downloadURL = [NSURL URLWithString:encodedURLString];
         NSURLRequest *request = [NSURLRequest requestWithURL:downloadURL];
-        downloadTask = [[_sessionList objectAtIndex:sessionID] downloadTaskWithRequest:request];
+        NSURLSession *session = [_sessionList objectAtIndex:sessionID];
+        downloadTask = [session downloadTaskWithRequest:request];
     }
     
     NSString *destinationKey = [NSString stringWithFormat:@"%lu", (unsigned long)downloadTask.taskIdentifier];

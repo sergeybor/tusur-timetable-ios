@@ -7,19 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
+#import "T3GroupItemView.h"
 
-#import "T3GroupItemPosition.h"
-
-@interface T3GroupItemSelectionView : UIView
-
-@property (assign, nonatomic) CGSize cornerRadiuses;
-@property (strong, nonatomic) UIColor *selectionColor;
-@property (weak, nonatomic) CAShapeLayer *selectionLayer;
-
-- (void)setupWithSelectionColor:(UIColor *)selColor cornerRadiuses:(CGSize)radiuses;
+@interface T3GroupItemSelectionView : T3GroupItemView
 
 - (void)changeSelectedState:(BOOL)isSelected animated:(BOOL)animated;
-- (void)changeCellPosition:(T3CellPosition)curCellPos;
 
 @end

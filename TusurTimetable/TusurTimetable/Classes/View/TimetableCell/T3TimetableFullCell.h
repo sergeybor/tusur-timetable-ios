@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IT3TimetableCell.h"
+#import "T3TimetableCell.h"
 
-@interface T3TimetableFullCell : UITableViewCell <IT3TimetableCell>
+@interface T3TimetableFullCell : T3TimetableCell
 
 @property (nonatomic, weak) IBOutlet UILabel *weekDayLabel;
 @property (nonatomic, weak) IBOutlet UILabel *parityLabel;

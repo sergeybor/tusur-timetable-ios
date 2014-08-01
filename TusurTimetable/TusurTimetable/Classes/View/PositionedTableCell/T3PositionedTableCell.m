@@ -16,8 +16,8 @@ const CGFloat kPTCBgViewHorizInset = 4.0f;
 
 const CGFloat kPTCSelViewHorizInset = 6.0f;
 const CGFloat kPTCSelViewTopInset = 2.0f;
-const CGFloat kPTCSelViewBottomInset = 3.0f;
-const CGFloat kPTCSelViewCornerRadius = 3.0f;
+const CGFloat kPTCSelViewBottomInset = 8.0f;
+const CGFloat kPTCSelViewCornerRadius = 8.0f;
 
 
 @implementation T3PositionedTableCell
@@ -40,7 +40,7 @@ const CGFloat kPTCSelViewCornerRadius = 3.0f;
 
 - (void)updateWithPosition:(T3CellPosition)pos
 {
-    [_bgView changePosition:pos];
+    [_bgView changeCellPosition:pos];
     [_selectionView changeCellPosition:pos];
     
     self.curCellPosition = pos;
@@ -69,91 +69,19 @@ const CGFloat kPTCSelViewCornerRadius = 3.0f;
         _bgView = [[T3GroupItemBackgroundView alloc] initWithFrame:CGRectMake(kPTCBgViewHorizInset, 0, self.frame.size.width - kPTCBgViewHorizInset * 2, self.frame.size.height)];
  //       [self.contentView insertSubview:_bgView atIndex:0];
     }
-//    self.backgroundView = _bgView;
-    //[self addSubview:_bgView];
-    
-    _bgView.topItemBgImage = [self cellGreyBackgroundImageForPosition:T3CellPosition_Top];
-	_bgView.middleItemBgImage = [self cellGreyBackgroundImageForPosition:T3CellPosition_Middle];
-	_bgView.bottomItemBgImage = [self cellGreyBackgroundImageForPosition:T3CellPosition_Bottom];
-	_bgView.fullItemBgImage = [self cellGreyBackgroundImageForPosition:T3CellPosition_SingleCell];
+    [_bgView setupWithViewColor:[UIColor colorWithWhite:0.0f alpha:0.05f] cornerRadiuses:CGSizeMake(kPTCSelViewCornerRadius, kPTCSelViewCornerRadius)];
 
     if (!_selectionView) {
         _selectionView = [[T3GroupItemSelectionView alloc] initWithFrame:CGRectMake(kPTCSelViewHorizInset, kPTCSelViewTopInset, self.frame.size.width - kPTCSelViewHorizInset * 2, self.frame.size.height - (kPTCSelViewBottomInset + kPTCSelViewTopInset))];
    //     [self.contentView addSubview:_selectionView];
     }
- 
-    [_selectionView setupWithSelectionColor:[UIColor colorWithWhite:1.0f alpha:0.75f] cornerRadiuses:CGSizeMake(kPTCSelViewCornerRadius, kPTCSelViewCornerRadius)];
+    [_selectionView setupWithViewColor:[UIColor colorWithWhite:1.0f alpha:0.75f] cornerRadiuses:CGSizeMake(kPTCSelViewCornerRadius, kPTCSelViewCornerRadius)];
     
-//    self.selectedBackgroundView = _selectionView;
-	
 }
 
-- (UIImage *)cellGreyBackgroundImageForPosition:(T3CellPosition)position
+- (void)setBackgroundViewColor:(UIColor *)color
 {
-    NSString *bgImagePath;
-    UIEdgeInsets edgeInsets;
-    
-    switch (position) {
-        case T3CellPosition_Top:
-			bgImagePath = @"gray_top_backgr_item.png";
-			edgeInsets = UIEdgeInsetsMake(4, 4, 0, 5);
-            break;
-            
-        case T3CellPosition_Middle:
-			bgImagePath = @"gray_centre_backgr_item.png";
-			edgeInsets = UIEdgeInsetsMake(0, 1, 0, 2);
-            break;
-            
-        case T3CellPosition_Bottom:
-			bgImagePath = @"gray_down_backgr_item.png";
-			edgeInsets = UIEdgeInsetsMake(0, 4, 5, 5);
-            break;
-			
-		case T3CellPosition_SingleCell:
-			bgImagePath = @"gray_backitem_full.png";
-			edgeInsets = UIEdgeInsetsMake(4, 4, 5, 5);
-            break;
-            
-        default:
-			return nil;
-            break;
-    }
-    
-	return [[UIImage imageNamed:bgImagePath] resizableImageWithCapInsets:edgeInsets];
-}
-
-- (UIImage *)cellWhiteBackgroundImageForPosition:(T3CellPosition)position
-{
-	NSString *bgImagePath;
-	UIEdgeInsets edgeInsets;
-    
-	switch (position) {
-		case T3CellPosition_Top:
-			bgImagePath = @"white_top_backgr_item.png";
-			edgeInsets = UIEdgeInsetsMake(4, 4, 0, 5);
-			break;
-			
-		case T3CellPosition_Middle:
-			bgImagePath = @"white_centre_backgr_item.png";
-			edgeInsets = UIEdgeInsetsMake(0, 1, 0, 2);
-			break;
-			
-		case T3CellPosition_Bottom:
-			bgImagePath = @"white_down_backgr_item.png";
-			edgeInsets = UIEdgeInsetsMake(0, 4, 5, 5);
-			break;
-            
-        case T3CellPosition_SingleCell:
-            bgImagePath = @"white_backitem_full.png";
-            edgeInsets = UIEdgeInsetsMake(4, 4, 5, 5);
-            break;
-			
-		default:
-			return nil;
-			break;
-	}
-	
-	return [[UIImage imageNamed:bgImagePath] resizableImageWithCapInsets:edgeInsets];
+    [_bgView setViewColor:color];
 }
 
 @end

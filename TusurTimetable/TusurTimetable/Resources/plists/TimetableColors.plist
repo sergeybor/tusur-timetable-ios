@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>empty</key>
+	<string>1.1.1</string>
+	<key>laboratory</key>
+	<string>216.215.243</string>
+	<key>practice</key>
+	<string>213.246.254</string>
+	<key>lecture</key>
+	<string>228.255.215</string>
+</dict>
+</plist>

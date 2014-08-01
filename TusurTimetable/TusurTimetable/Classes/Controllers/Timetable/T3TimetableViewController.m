@@ -20,13 +20,18 @@
 #import "SVProgressHUD.h"
 #import "T3PlaceholderView.h"
 
+#import "UIView+Resizing.h"
+#import "UITableView+CellPosition.h"
 
 NSString *const T3TimetableShortCellReussableIdentifier = @"TimetableShortCell";
 NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
 
+const CGFloat T3TimetableHeaderSectionHeight = 30.0;
+
+
 @interface T3TimetableViewController ()
 
-@property (nonatomic, weak) IBOutlet UIView *headerView;
+@property (nonatomic, strong) IBOutlet UIView *headerView;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *segmentedControl;
 @property (nonatomic, weak) IBOutlet UIButton *addButton;
 
@@ -41,7 +46,7 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     [super viewDidLoad];
     [self setupFetchedResultController];
     [self checkIfNeedLoadAndLoad];
-    [self setupHeader];
+    
     
     self.cellsWithFullInfo = [NSMutableArray array];
 }
@@ -52,6 +57,8 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     
     [self setupFavouriteButton];
     self.navigationItem.title = [NSString stringWithFormat:@"Гр. %@", self.group.name];
+    
+    [self setupHeader];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -92,8 +99,9 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
         cell = (T3TimetableShortCell *)[tableView dequeueReusableCellWithIdentifier:T3TimetableShortCellReussableIdentifier];
     }
     
+    T3CellPosition cellPosition = [self.tableView positionForCellAtIndexPath:indexPath];
     T3TimeTable *timetable = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [(id<IT3TimetableCell>)cell configureWithTimetable:timetable];
+    [(T3TimetableCell *)cell configureWithTimetable:timetable cellPosition:cellPosition];
     
     return cell;
 }
@@ -102,20 +110,37 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    return T3TimetableHeaderSectionHeight;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    CGFloat labelIndent = 20.0;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, T3TimetableHeaderSectionHeight)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelIndent, 0, view.frame.size.width - labelIndent, view.frame.size.height)];
+    label.textColor = [UIColor darkGrayColor];
+    label.font = [UIFont boldSystemFontOfSize:20.0];
+    
     NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:section];
     T3TimeTable *timetable = [self.fetchedResultsController objectAtIndexPath:path];
     
-    return [T3TimeTable stringToDayNumber:[timetable.dayOfWeek integerValue] isOddWeek:self.segmentedControl.selectedSegmentIndex];
+    label.text = [T3TimeTable stringToDayNumber:[timetable.dayOfWeek integerValue] isOddWeek:self.segmentedControl.selectedSegmentIndex];
+    
+    [view addSubview:label];
+    
+    return view;
 }
+
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.cellsWithFullInfo containsObject:indexPath]) {
         [self.cellsWithFullInfo removeObject:indexPath];
     } else {
-        UITableViewCell<IT3TimetableCell> *cell = (UITableViewCell<IT3TimetableCell> *)[self.tableView cellForRowAtIndexPath:indexPath];
+        T3TimetableCell *cell = (T3TimetableCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         T3TimeTable *timetable = [self.fetchedResultsController objectAtIndexPath:indexPath];
         if ([[cell class] shouldExpandForItem:timetable])
             [self.cellsWithFullInfo addObject:indexPath];
@@ -175,15 +200,6 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
     [self showAlertWithTitle:@"Ошибка!" message:@"Не удалось загрузить новую версию расписания"];
 }
 
-#pragma mark - Scroll
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGRect rect = self.tableView.tableHeaderView.frame;
-    rect.origin.y = MIN(0, self.tableView.contentOffset.y);
-    self.tableView.tableHeaderView.frame = rect;
-}
-
 #pragma mark - helpers
 
 - (void)checkIfNeedLoadAndLoad
@@ -223,15 +239,20 @@ NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
 
 - (void)setupHeader
 {
-//    CGFloat dummyViewHeight = 68.0;
+    CGFloat dummyViewHeight = 68.0;
 //    UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, dummyViewHeight)];
 //    self.tableView.tableHeaderView = dummyView;
  //   [self.view.superview addSubview:self.headerView];
   
 //    [self.tableView insertSubview:self.headerView atIndex:[self.tableView.subviews count]-1];
     
-//    self.tableView.tableHeaderView = nil;
-//    self.tableView.contentInset = UIEdgeInsetsMake(dummyViewHeight, 0, 0, 0);
+    self.tableView.tableHeaderView = nil;
+    self.tableView.contentInset = UIEdgeInsetsMake(dummyViewHeight, 0, 0, 0);
+    
+    [self.headerView setY:100.0];
+    [self.headerView setX:0.0];
+    
+    [self.tableView.window addSubview:self.headerView];
     
     
 }

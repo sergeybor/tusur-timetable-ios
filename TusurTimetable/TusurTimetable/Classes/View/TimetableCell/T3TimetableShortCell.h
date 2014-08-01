@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IT3TimetableCell.h"
+#import "T3TimetableCell.h"
 
-@interface T3TimetableShortCell : UITableViewCell <IT3TimetableCell>
+@interface T3TimetableShortCell : T3TimetableCell
 
 @property (nonatomic, weak) IBOutlet UILabel *numberLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;

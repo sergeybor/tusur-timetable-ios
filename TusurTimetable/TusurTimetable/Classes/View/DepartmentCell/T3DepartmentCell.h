@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "T3PositionedTableCell.h"
 
-@interface T3DepartmentCell : T3PositionedTableCell
+@interface T3DepartmentCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *departmentNameLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *departmentIcon;
 
 @end

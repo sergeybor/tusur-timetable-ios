@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "T3PositionedTableCell.h"
 
-@interface T3GroupCell : UITableViewCell
+@interface T3GroupCell : T3PositionedTableCell
 
 @property (nonatomic, weak) IBOutlet UILabel *groupNameLabel;
 

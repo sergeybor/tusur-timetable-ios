@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ВФ</key>
+	<string>logo_vf</string>
+	<key>ГФ</key>
+	<string>logo_gf</string>
+	<key>РКФ</key>
+	<string>logo_rkf</string>
+	<key>РТФ</key>
+	<string>logo_rtf</string>
+	<key>ФБ</key>
+	<string>logo_fb</string>
+	<key>ФВС</key>
+	<string>logo_fvs</string>
+	<key>ФИТ</key>
+	<string>logo_fit</string>
+	<key>ФСУ</key>
+	<string>logo_fsu</string>
+	<key>ФЭТ</key>
+	<string>logo_fet</string>
+	<key>ЭФ</key>
+	<string>logo_ef</string>
+	<key>ЮФ</key>
+	<string>logo_yuf</string>
+</dict>
+</plist>

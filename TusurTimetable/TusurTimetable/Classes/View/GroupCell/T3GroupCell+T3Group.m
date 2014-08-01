@@ -11,9 +11,11 @@
 
 @implementation T3GroupCell (T3Group)
 
-- (void)configureForGroup:(T3Group *)group
+- (void)configureForGroup:(T3Group *)group cellPosition:(T3CellPosition)cellPosition
 {
     self.groupNameLabel.text = group.name;
+    
+    [self updateWithPosition:cellPosition];
 }
 
 @end

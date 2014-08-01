@@ -10,11 +10,10 @@
 #import "UIColor+CreateMethods.h"
 
 const CGFloat kGBVDefaultSeparatorHeight = 1.0f;
-const CGFloat kGBVDefaultSeparatorInset = 1.0f;
+const CGFloat kGBVDefaultSeparatorInset = 0.0f;
 
 @interface T3GroupItemBackgroundView ()
 
-@property (weak, nonatomic) UIImageView *bgImageView;
 @property (assign, nonatomic) T3CellPosition curPosition;
 
 - (void)commonInit;
@@ -48,22 +47,31 @@ const CGFloat kGBVDefaultSeparatorInset = 1.0f;
 {
 	self.backgroundColor = [UIColor clearColor];
 	
-	// setup bgImageView
-	UIImageView *imageView = [UIImageView new];
-	imageView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-	imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	[self addSubview:imageView];
-	self.bgImageView = imageView;
-	
-	// setup separator view
-	self.separatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width - 2*kGBVDefaultSeparatorInset, kGBVDefaultSeparatorHeight)];
-	self.separatorView.backgroundColor = [UIColor colorWithHex:0xdfe9ed alpha:1.0f];
-	self.separatorView.hidden = NO;
-	self->_showsSeparator = YES;
-	
+    [self setupSeparator];
 	
 	// Setting default cell position
-	[self changePosition:T3CellPosition_Middle];
+	[self changeCellPosition:T3CellPosition_Middle];
+}
+
+
+
+- (void)setupWithViewColor:(UIColor *)selColor cornerRadiuses:(CGSize)radiuses
+{
+    [super setupWithViewColor:selColor cornerRadiuses:radiuses];
+    
+    self.backgroundColor = [UIColor clearColor];
+	
+	[self setupSeparator];
+    
+}
+
+- (void)setupSeparator
+{
+    // setup separator view
+	self.separatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width - 2*kGBVDefaultSeparatorInset, kGBVDefaultSeparatorHeight)];
+	self.separatorView.backgroundColor = [UIColor whiteColor];
+	self.separatorView.hidden = NO;
+	self->_showsSeparator = YES;
 }
 
 - (void)setSeparatorView:(UIView *)separatorView
@@ -98,39 +106,16 @@ const CGFloat kGBVDefaultSeparatorInset = 1.0f;
 	self.separatorView.frame = CGRectMake(floorf(deltaWidth/2.0f), self.frame.size.height - separatorHeight, separatorWidth, separatorHeight);
 }
 
-- (void)changePosition:(T3CellPosition)position
-{
-	self.curPosition = position;
-	if (self.showsSeparator) {
-		self.separatorView.hidden = ![self isNeedSeparatorInPosition:position];
-	}
-	
-	switch (position) {
-		case T3CellPosition_Top:
-			self.bgImageView.image = self.topItemBgImage;
-			break;
-			
-		case T3CellPosition_Middle:
-			self.bgImageView.image = self.middleItemBgImage;
-			break;
-			
-		case T3CellPosition_Bottom:
-			self.bgImageView.image = self.bottomItemBgImage;
-			break;
-			
-		case T3CellPosition_SingleCell:
-			self.bgImageView.image = self.fullItemBgImage;
-			break;
-			
-		default:
-			NSAssert(NO, @"Unexpected position");
-			break;
-	}
-}
-
 - (BOOL)isNeedSeparatorInPosition:(T3CellPosition)position
 {
     return (position != T3CellPosition_Bottom && position != T3CellPosition_SingleCell && position != T3CellPosition_None);
+}
+
+- (void)changeCellPosition:(T3CellPosition)curCellPos
+{
+    [super changeCellPosition:curCellPos];
+
+    [self setShowsSeparator:YES];
 }
 
 @end

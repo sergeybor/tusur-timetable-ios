@@ -14,9 +14,13 @@
 
 #import "T3TimetableViewController.h"
 
+#import "UITableView+CellPosition.h"
+
 
 NSString *const T3GroupCellReussableIdentifier = @"GroupCell";
 NSString *const T3GroupToTimetableSegue = @"GroupToTimetableSegue";
+
+const CGFloat T3GroupHeaderSectionHeight = 40.0;
 
 @interface T3GroupsTableViewController ()
 
@@ -53,7 +57,10 @@ NSString *const T3GroupToTimetableSegue = @"GroupToTimetableSegue";
     T3GroupCell *cell = (T3GroupCell *)[tableView dequeueReusableCellWithIdentifier:T3GroupCellReussableIdentifier];
     
     T3Group *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [cell configureForGroup:group];
+    
+    T3CellPosition cellPosition = [self.tableView positionForCellAtIndexPath:indexPath];
+    
+    [cell configureForGroup:group cellPosition:cellPosition];
     
     return cell;
 }
@@ -62,12 +69,28 @@ NSString *const T3GroupToTimetableSegue = @"GroupToTimetableSegue";
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    return T3GroupHeaderSectionHeight;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    CGFloat labelIndent = 20.0;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, T3GroupHeaderSectionHeight)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelIndent, 0, view.frame.size.width - labelIndent, view.frame.size.height)];
+    label.textColor = [UIColor darkGrayColor];
+    label.font = [UIFont boldSystemFontOfSize:20.0];
+    
     NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:section];
     T3Group *group = [self.fetchedResultsController objectAtIndexPath:path];
     
-    return [NSString stringWithFormat:@"   %i-й курс", [group.year integerValue]];
+    label.text = [NSString stringWithFormat:@"%i-й курс", [group.year integerValue]];
+    
+    [view addSubview:label];
+    
+    return view;
 }
 
 #pragma mark - segue
