@@ -16,6 +16,7 @@
 #import "T3TimetableViewController.h"
 
 #import "SVProgressHUD.h"
+#import "UITableView+CellPosition.h"
 
 
 NSString *const T3LecturerCellReussableIdentifier = @"LecturerCell";
@@ -32,6 +33,10 @@ NSString *const T3LecturerToTimetableSegue = @"LecturerToTimetableSegue";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UINib *cellNib = [UINib nibWithNibName:NSStringFromClass([T3LecturerCell class]) bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:T3LecturerCellReussableIdentifier];
+    self.tableView.rowHeight = [T3LecturerCell cellHeight];
     
     self.navigationItem.title = @"Преподователи";
     
@@ -71,8 +76,9 @@ NSString *const T3LecturerToTimetableSegue = @"LecturerToTimetableSegue";
 {
     T3LecturerCell *cell = (T3LecturerCell *)[tableView dequeueReusableCellWithIdentifier:T3LecturerCellReussableIdentifier];
     
+    T3CellPosition cellPosition = [self.tableView positionForCellAtIndexPath:indexPath];
     T3Lecturer *lecturer = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [cell configureWithLecturer:lecturer];
+    [cell configureWithLecturer:lecturer cellPosition:cellPosition];
     
     return cell;
 }

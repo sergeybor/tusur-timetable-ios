@@ -7,6 +7,7 @@
 //
 
 #import "T3BaseViewController.h"
+#import "T3PlaceholderView.h"
 
 @interface T3BaseViewController ()
 
@@ -19,6 +20,38 @@
     [super viewDidLoad];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [T3PlaceholderView hideFromView:self.view];
+}
+
+- (void)showPlaceholderWithError:(NSError *)error
+{
+    [T3PlaceholderView showError:error
+                          inView:self.view
+                  buttonTapBlock:nil];
+    
+}
+
+- (void)showAlertWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                    message:error.localizedDescription
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ок"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+}
+
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ок"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 @end

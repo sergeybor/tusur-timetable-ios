@@ -11,9 +11,10 @@
 
 @implementation T3SearchGroupCell
 
-- (void)configureWithGroup:(T3Group *)group
+- (void)configureWithGroup:(T3Group *)group cellPosition:(T3CellPosition)cellPosition
 {
     self.nameLabel.text = group.name;
+    [self updateWithPosition:cellPosition];
 }
 
 @end

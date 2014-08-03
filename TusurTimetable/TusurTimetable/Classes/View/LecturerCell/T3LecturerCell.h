@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "T3PositionedTableCell.h"
 
 @class T3Lecturer;
 
-@interface T3LecturerCell : UITableViewCell
+@interface T3LecturerCell : T3PositionedTableCell
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 
-- (void)configureWithLecturer:(T3Lecturer *)lecturer;
+- (void)configureWithLecturer:(T3Lecturer *)lecturer cellPosition:(T3CellPosition)cellPosition;
++ (CGFloat)cellHeight;
 
 @end

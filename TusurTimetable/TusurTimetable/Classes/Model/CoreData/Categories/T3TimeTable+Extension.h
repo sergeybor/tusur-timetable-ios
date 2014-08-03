@@ -15,6 +15,8 @@
 - (NSString *)stringWeekDay;
 - (NSString *)stringPartily;
 - (NSString *)stringLessonTime;
+- (NSString *)stringForKind;
+- (NSString *)stringForShortKind;
 
 - (BOOL)isEmpty;
 

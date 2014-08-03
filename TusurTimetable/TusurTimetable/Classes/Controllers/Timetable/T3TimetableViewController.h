@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "T3BaseTableViewControllerWithFetchedResultController.h"
+#import "T3BaseViewControllerWithFetchedResultController.h"
 
 @class T3Group, T3Lecturer;
 
-@interface T3TimetableViewController : T3BaseTableViewControllerWithFetchedResultController
+@interface T3TimetableViewController : T3BaseViewControllerWithFetchedResultController
 
 @property (nonatomic, strong) T3Group *group;
 @property (nonatomic, strong) T3Lecturer *lecturer;

@@ -15,12 +15,12 @@
 
 - (void)configureWithTimetable:(T3TimeTable *)timetable cellPosition:(T3CellPosition)cellPosition
 {
-    self.numberLabel.text = [NSString stringWithFormat:@"%i", [timetable.lessonNumber integerValue]];
+    self.numberLabel.text = [NSString stringWithFormat:@"%i.", [timetable.lessonNumber integerValue]];
     self.timeLabel.text = [timetable stringLessonTime];
-    self.kindLabel.text = [NSString stringWithFormat:@"%i", [timetable.hide boolValue] ];
+ //   self.kindLabel.text = [NSString stringWithFormat:@"%i", [timetable.hide boolValue] ];
     self.roomLabel.text = timetable.lectureHall;
     self.teacherLabel.text = timetable.teacher;
-    self.shortNameLabel.text = timetable.shortName;
+    self.shortNameLabel.text = [NSString stringWithFormat:@"%@ %@", timetable.shortName, [timetable stringForShortKind]];
     
     [self setupBGColorToKind:timetable];
     [self updateWithPosition:cellPosition];

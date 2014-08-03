@@ -11,9 +11,15 @@
 
 @implementation T3LecturerCell
 
-- (void)configureWithLecturer:(T3Lecturer *)lecturer
+- (void)configureWithLecturer:(T3Lecturer *)lecturer cellPosition:(T3CellPosition)cellPosition
 {
     self.nameLabel.text = lecturer.name;
+    [self updateWithPosition:cellPosition];
+}
+
++ (CGFloat)cellHeight
+{
+    return 44.0;
 }
 
 @end

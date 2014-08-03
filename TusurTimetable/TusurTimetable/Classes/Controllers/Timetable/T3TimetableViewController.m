@@ -44,6 +44,13 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UINib *shortCellNib = [UINib nibWithNibName:NSStringFromClass([T3TimetableShortCell class]) bundle:nil];
+    [self.tableView registerNib:shortCellNib forCellReuseIdentifier:T3TimetableShortCellReussableIdentifier];
+    
+    UINib *fullCellNib = [UINib nibWithNibName:NSStringFromClass([T3TimetableFullCell class]) bundle:nil];
+    [self.tableView registerNib:fullCellNib forCellReuseIdentifier:T3TimetableFullCellReussableIdentifier];
+    
     [self setupFetchedResultController];
     [self checkIfNeedLoadAndLoad];
     
@@ -58,7 +65,6 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
     [self setupFavouriteButton];
     self.navigationItem.title = [NSString stringWithFormat:@"Гр. %@", self.group.name];
     
-    [self setupHeader];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -155,10 +161,11 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    T3TimeTable *timetable = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     if ([self.cellsWithFullInfo containsObject:indexPath]) {
-        return 188.0;
+        return [T3TimetableFullCell heightForItem:timetable];
     } else {
-        T3TimeTable *timetable = [self.fetchedResultsController objectAtIndexPath:indexPath];
         return [T3TimetableShortCell heightForItem:timetable];
     }
 }
@@ -235,26 +242,6 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
 - (void)removeErrorSignInNavigationBar
 {
     self.navigationItem.rightBarButtonItem = nil;
-}
-
-- (void)setupHeader
-{
-    CGFloat dummyViewHeight = 68.0;
-//    UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, dummyViewHeight)];
-//    self.tableView.tableHeaderView = dummyView;
- //   [self.view.superview addSubview:self.headerView];
-  
-//    [self.tableView insertSubview:self.headerView atIndex:[self.tableView.subviews count]-1];
-    
-    self.tableView.tableHeaderView = nil;
-    self.tableView.contentInset = UIEdgeInsetsMake(dummyViewHeight, 0, 0, 0);
-    
-    [self.headerView setY:100.0];
-    [self.headerView setX:0.0];
-    
-    [self.tableView.window addSubview:self.headerView];
-    
-    
 }
 
 @end

@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>exam</key>
+	<string>252.193.181</string>
+	<key>test</key>
+	<string>252.193.181</string>
+	<key>design</key>
+	<string>255.213.229</string>
+	<key>research</key>
+	<string>244.227.215</string>
 	<key>empty</key>
 	<string>1.1.1</string>
 	<key>laboratory</key>

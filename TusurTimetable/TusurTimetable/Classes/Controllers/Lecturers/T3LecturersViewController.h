@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "T3BaseTableViewControllerWithFetchedResultController.h"
+#import "T3BaseViewControllerWithFetchedResultController.h"
 
-@interface T3LecturersViewController : T3BaseTableViewControllerWithFetchedResultController
+@interface T3LecturersViewController : T3BaseViewControllerWithFetchedResultController
 
 @end

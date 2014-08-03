@@ -11,6 +11,9 @@
 		8F089EC3198BB6B4009DF576 /* T3GroupItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F089EC2198BB6B4009DF576 /* T3GroupItemView.m */; };
 		8F089EC5198BD48C009DF576 /* TimetableColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F089EC4198BD48C009DF576 /* TimetableColors.plist */; };
 		8F089EC8198BE0DD009DF576 /* T3TimetableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F089EC7198BE0DD009DF576 /* T3TimetableCell.m */; };
+		8F089ECD198EB8C2009DF576 /* T3TimetableShortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F089ECC198EB8C2009DF576 /* T3TimetableShortCell.xib */; };
+		8F089ECF198EB8FA009DF576 /* T3TimetableFullCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F089ECE198EB8FA009DF576 /* T3TimetableFullCell.xib */; };
+		8F089ED1198EC059009DF576 /* T3LecturerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F089ED0198EC059009DF576 /* T3LecturerCell.xib */; };
 		8F0ACF8719506EB000B3643B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0ACF8619506EB000B3643B /* Foundation.framework */; };
 		8F0ACF8919506EB000B3643B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0ACF8819506EB000B3643B /* CoreGraphics.framework */; };
 		8F0ACF8B19506EB000B3643B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0ACF8A19506EB000B3643B /* UIKit.framework */; };
@@ -109,6 +112,9 @@
 		8F089EC4198BD48C009DF576 /* TimetableColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TimetableColors.plist; sourceTree = "<group>"; };
 		8F089EC6198BE0DD009DF576 /* T3TimetableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T3TimetableCell.h; sourceTree = "<group>"; };
 		8F089EC7198BE0DD009DF576 /* T3TimetableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T3TimetableCell.m; sourceTree = "<group>"; };
+		8F089ECC198EB8C2009DF576 /* T3TimetableShortCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T3TimetableShortCell.xib; sourceTree = "<group>"; };
+		8F089ECE198EB8FA009DF576 /* T3TimetableFullCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T3TimetableFullCell.xib; sourceTree = "<group>"; };
+		8F089ED0198EC059009DF576 /* T3LecturerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = T3LecturerCell.xib; sourceTree = "<group>"; };
 		8F0ACF8319506EB000B3643B /* TusurTimetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TusurTimetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0ACF8619506EB000B3643B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F0ACF8819506EB000B3643B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -596,8 +602,10 @@
 			children = (
 				8FD9038D197FC3FA00408469 /* T3TimetableShortCell.h */,
 				8FD9038E197FC3FA00408469 /* T3TimetableShortCell.m */,
+				8F089ECC198EB8C2009DF576 /* T3TimetableShortCell.xib */,
 				8FD90390197FC5D300408469 /* T3TimetableFullCell.h */,
 				8FD90391197FC5D300408469 /* T3TimetableFullCell.m */,
+				8F089ECE198EB8FA009DF576 /* T3TimetableFullCell.xib */,
 				8F089EC6198BE0DD009DF576 /* T3TimetableCell.h */,
 				8F089EC7198BE0DD009DF576 /* T3TimetableCell.m */,
 			);
@@ -618,6 +626,7 @@
 			children = (
 				8FF6AA1619853E5F00B22D36 /* T3LecturerCell.h */,
 				8FF6AA1719853E5F00B22D36 /* T3LecturerCell.m */,
+				8F089ED0198EC059009DF576 /* T3LecturerCell.xib */,
 			);
 			path = LecturerCell;
 			sourceTree = "<group>";
@@ -797,6 +806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF6AA91198AAB5E00B22D36 /* T3FavouriteCell.xib in Resources */,
+				8F089ECF198EB8FA009DF576 /* T3TimetableFullCell.xib in Resources */,
 				8FFB1577198BA480000AC9BB /* DepartmentsLogo.plist in Resources */,
 				8FFB1567198BA300000AC9BB /* logo_ef.png in Resources */,
 				8FFB156A198BA300000AC9BB /* logo_fit.png in Resources */,
@@ -813,7 +823,9 @@
 				8FFB156B198BA300000AC9BB /* logo_fsu.png in Resources */,
 				8FFB156C198BA300000AC9BB /* logo_fvs.png in Resources */,
 				8F0ACF9119506EB000B3643B /* InfoPlist.strings in Resources */,
+				8F089ED1198EC059009DF576 /* T3LecturerCell.xib in Resources */,
 				8FFB156D198BA300000AC9BB /* logo_gf.png in Resources */,
+				8F089ECD198EB8C2009DF576 /* T3TimetableShortCell.xib in Resources */,
 				8FB866931964676B002BAA29 /* README.mdown in Resources */,
 				8FFB1569198BA300000AC9BB /* logo_fet.png in Resources */,
 				8FFB156E198BA300000AC9BB /* logo_rkf.png in Resources */,

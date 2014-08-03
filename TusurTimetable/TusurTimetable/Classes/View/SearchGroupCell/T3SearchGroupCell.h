@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "T3PositionedTableCell.h"
 
 @class T3Group;
 
-@interface T3SearchGroupCell : UITableViewCell
+@interface T3SearchGroupCell : T3PositionedTableCell
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 
-- (void)configureWithGroup:(T3Group *)group;
+- (void)configureWithGroup:(T3Group *)group cellPosition:(T3CellPosition)cellPosition;
 
 @end

@@ -21,7 +21,7 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    [T3PlaceholderView hideFromView:self.view];
+    [T3PlaceholderView hideFromView:self.tableView];
 }
 
 - (void)showPlaceholderWithError:(NSError *)error

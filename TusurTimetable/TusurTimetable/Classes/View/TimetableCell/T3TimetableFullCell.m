@@ -8,6 +8,9 @@
 
 #import "T3TimetableFullCell.h"
 #import "T3Timetable+Extension.h"
+#import "UIView+Resizing.h"
+
+const CGFloat T3TFLHeight = 145.0;
 
 @implementation T3TimetableFullCell
 
@@ -18,11 +21,11 @@
     self.weekDayLabel.text = [timetable stringWeekDay];
     self.parityLabel.text = [timetable stringPartily];
     
-    self.numberLabel.text = [NSString stringWithFormat:@"%i", [timetable.lessonNumber integerValue]];
+    self.numberLabel.text = [NSString stringWithFormat:@"%i.", [timetable.lessonNumber integerValue]];
     self.timeLabel.text = [timetable stringLessonTime];
     
     self.shortNameLabel.text = timetable.shortName;
-    self.kindLabel.text = timetable.kind;
+    self.kindLabel.text = [timetable stringForKind];
     
     self.nameLabel.text = timetable.fullName;
     
@@ -32,8 +35,15 @@
     
     self.noteLabel.text = timetable.note;
     
+    [self setupBackgroundWithTimetable:timetable];
     [self setupBGColorToKind:timetable];
     [self updateWithPosition:cellPosition];
+}
+
+- (void)setupBackgroundWithTimetable:(T3TimeTable *)timetable
+{
+    CGFloat height = [T3TimetableFullCell heightForItem:timetable];
+    [self.contentView setHeight:height];
 }
 
 + (BOOL)shouldExpandForItem:(T3TimeTable *)timetable
@@ -44,16 +54,17 @@
 + (CGFloat)heightForItem:(T3TimeTable *)timetable
 {
     if ([timetable.note length] > 0) {
-        return 188.0 + [T3TimetableFullCell heightForNote:timetable.note];
+        CGFloat height = T3TFLHeight + [T3TimetableFullCell heightForNote:timetable.note] + 15.0;
+        return height;
     } else {
-        return 188.0;
+        return T3TFLHeight;
     }
 }
 
 + (CGFloat)heightForNote:(NSString *)note
 {
     CGSize textSize = CGSizeZero;
-    UIFont *font = [UIFont systemFontOfSize:17.0];
+    UIFont *font = [UIFont systemFontOfSize:12.0];
     CGSize constrainedSize = CGSizeMake(288.0, NSIntegerMax);
     
     if ([note respondsToSelector:

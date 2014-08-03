@@ -13,6 +13,7 @@
 #import "T3TimetableViewController.h"
 
 #import "T3SearchGroupCell.h"
+#import "UITableView+CellPosition.h"
 
 NSString *const T3SearchGroupCellReussableIdentifier = @"SearchGroupCell";
 NSString *const T3SearchGroupToTimetableSegue = @"SearchGroupToTimetableSegue";
@@ -53,8 +54,9 @@ NSString *const T3SearchGroupToTimetableSegue = @"SearchGroupToTimetableSegue";
 {
     T3SearchGroupCell *cell = (T3SearchGroupCell *)[tableView dequeueReusableCellWithIdentifier:T3SearchGroupCellReussableIdentifier];
     
+    T3CellPosition cellPosition = [self.tableView positionForCellAtIndexPath:indexPath];
     T3Group *group = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [cell configureWithGroup:group];
+    [cell configureWithGroup:group cellPosition:cellPosition];
     
     return cell;
 }

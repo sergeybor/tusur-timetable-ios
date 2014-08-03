@@ -186,4 +186,57 @@
     
 }
 
+- (NSString *)stringForKind
+{
+    if ([self.kind isEqualToString:@"laboratory"]) {
+        return @"Лабораторная работа";
+    }
+    if ([self.kind isEqualToString:@"lecture"]) {
+        return @"Лекция";
+    }
+    if ([self.kind isEqualToString:@"practice"]) {
+        return @"Практика";
+    }
+    if ([self.kind isEqualToString:@"research"]) {
+        return @"Курсовая работа";
+    }
+    if ([self.kind isEqualToString:@"design"]) {
+        return @"Курсовое проектирование";
+    }
+    if ([self.kind isEqualToString:@"test"]) {
+        return @"Зачет";
+    }
+    if ([self.kind isEqualToString:@"exam"]) {
+        return @"Экзамен";
+    }
+    return nil;
+    
+}
+
+- (NSString *)stringForShortKind
+{
+    if ([self.kind isEqualToString:@"laboratory"]) {
+        return @"л.р.";
+    }
+    if ([self.kind isEqualToString:@"lecture"]) {
+        return @"лек.";
+    }
+    if ([self.kind isEqualToString:@"practice"]) {
+        return @"пр.";
+    }
+    if ([self.kind isEqualToString:@"research"]) {
+        return @"к.р.";
+    }
+    if ([self.kind isEqualToString:@"design"]) {
+        return @"к.п.";
+    }
+    if ([self.kind isEqualToString:@"test"]) {
+        return @"зач.";
+    }
+    if ([self.kind isEqualToString:@"exam"]) {
+        return @"экз.";
+    }
+    return nil;
+}
+
 @end
