@@ -16,6 +16,7 @@
 #import "T3Group+Extension.h"
 #import "T3TimeTable+Extension.h"
 #import "T3Favourites+Extension.h"
+#import "T3UpdateManager.h"
 
 #import "SVProgressHUD.h"
 #import "T3PlaceholderView.h"
@@ -26,7 +27,7 @@
 NSString *const T3TimetableShortCellReussableIdentifier = @"TimetableShortCell";
 NSString *const T3TimetableFullCellReussableIdentifier = @"TimetableFullCell";
 
-const CGFloat T3TimetableHeaderSectionHeight = 30.0;
+const CGFloat T3TimetableHeaderSectionHeight = 35.0;
 
 
 @interface T3TimetableViewController ()
@@ -126,20 +127,44 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
     CGFloat labelIndent = 20.0;
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, T3TimetableHeaderSectionHeight)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelIndent, 0, view.frame.size.width - labelIndent, view.frame.size.height)];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelIndent, 0, view.frame.size.width - labelIndent, view.frame.size.height-5)];
+    label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor darkGrayColor];
     label.font = [UIFont boldSystemFontOfSize:20.0];
     
     NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:section];
     T3TimeTable *timetable = [self.fetchedResultsController objectAtIndexPath:path];
     
-    label.text = [T3TimeTable stringToDayNumber:[timetable.dayOfWeek integerValue] isOddWeek:self.segmentedControl.selectedSegmentIndex];
+    NSString *day = [T3TimeTable weekDayToNumber:[timetable.dayOfWeek integerValue]];
+    
+    BOOL isOddWeek = self.segmentedControl.selectedSegmentIndex;
+    BOOL isToday = [T3TimeTable isDayToday:[timetable.dayOfWeek integerValue] isOddWeek:isOddWeek];
+    
+    if (isToday) {
+        day = [NSString stringWithFormat:@"%@ (сегодня)", day];
+        [self decorateView:view];
+    }
+
+    label.text = day;
     
     [view addSubview:label];
     
     return view;
 }
 
+- (void)decorateView:(UIView *)view
+{
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.fillColor = [UIColor colorWithWhite:0.0f alpha:0.05f].CGColor;
+    layer.frame = CGRectMake(10.0, 0, view.frame.size.width - 20.0, view.frame.size.height - 2);
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:layer.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(8.0, 8.0)];
+    layer.path = path.CGPath;
+    
+    [view.layer addSublayer:layer];
+
+}
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -211,9 +236,14 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
 
 - (void)checkIfNeedLoadAndLoad
 {
+    //check if there is internet connection
+    if ([[T3UpdateManager defaultUpdateManager] isNetworkReachable]) {
+        [self setupErrorSignInNavigationBar];
+        return;
+    }
+    
     __weak T3TimetableViewController *wself = self;
     
-    //TODO: add check if need load
     [self removeErrorSignInNavigationBar];
     [SVProgressHUD show];
     [self.group updateTimetableFromServerWithCompletion:^(NSError *error) {
@@ -228,15 +258,31 @@ const CGFloat T3TimetableHeaderSectionHeight = 30.0;
 - (void)setupFavouriteButton
 {
     if ([self.group isFavourite]) {
-        [self.addButton setTitle:@"-" forState:UIControlStateNormal];
+        UIImage *image = [UIImage imageNamed:@"minus"];
+        [self.addButton setImage:image forState:UIControlStateNormal];
+       // [self.addButton setTitle:@"-" forState:UIControlStateNormal];
     } else {
-        [self.addButton setTitle:@"+" forState:UIControlStateNormal];
+//        [self.addButton setTitle:@"+" forState:UIControlStateNormal];
+        UIImage *image = [UIImage imageNamed:@"plus"];
+        [self.addButton setImage:image forState:UIControlStateNormal];
+
     }
 }
 
 - (void)setupErrorSignInNavigationBar
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"!" style:UIBarButtonItemStylePlain target:self action:@selector(onAlertButtonTap:)];
+    UIImage *image = [UIImage imageNamed:@"emergencyicon"];
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    
+    UIButton* button = [[UIButton alloc] initWithFrame:frame];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    [button setShowsTouchWhenHighlighted:YES];
+    
+    [button addTarget:self action:@selector(onAlertButtonTap:) forControlEvents:UIControlEventTouchDown];
+    
+    UIBarButtonItem* barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    [self.navigationItem setRightBarButtonItem:barButtonItem];
 }
 
 - (void)removeErrorSignInNavigationBar

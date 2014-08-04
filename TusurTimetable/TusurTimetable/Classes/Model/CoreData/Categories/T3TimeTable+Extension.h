@@ -10,7 +10,8 @@
 
 @interface T3TimeTable (Extension)
 
-+ (NSString *)stringToDayNumber:(NSInteger)number isOddWeek:(BOOL)isOddWeek;
++ (NSString *)weekDayToNumber:(NSInteger)number;
++ (BOOL)isDayToday:(NSInteger)number isOddWeek:(BOOL)isOddWeek;
 
 - (NSString *)stringWeekDay;
 - (NSString *)stringPartily;

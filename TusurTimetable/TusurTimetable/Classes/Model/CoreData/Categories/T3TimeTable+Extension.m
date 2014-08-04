@@ -51,6 +51,23 @@
     return day;
 }
 
++ (BOOL)isDayToday:(NSInteger)number isOddWeek:(BOOL)isOddWeek
+{
+    BOOL result = NO;
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [gregorian setFirstWeekday:2]; // Sunday == 1, Saturday == 7
+    NSUInteger weekdayNow = [gregorian ordinalityOfUnit:NSWeekdayCalendarUnit inUnit:NSWeekCalendarUnit forDate:[NSDate date]];
+    
+    BOOL isOddWeekNow = [T3TimeTable isTodayOddWeek];
+    
+    if ((number == weekdayNow) && (isOddWeek == isOddWeekNow)) {
+        result = YES;
+    }
+    
+    return result;
+
+}
+
 + (BOOL)isTodayOddWeek
 {
     NSCalendar* cal = [NSCalendar currentCalendar];

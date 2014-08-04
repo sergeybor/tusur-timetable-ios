@@ -26,5 +26,6 @@ typedef void (^LoadCompleteBlock)(NSError *error);
 - (void)cancelLoadLecturers;
 - (void)cancelLoadTimetableForOwner:(NSManagedObject *)owner;
 
+- (BOOL)isNetworkReachable;
 
 @end

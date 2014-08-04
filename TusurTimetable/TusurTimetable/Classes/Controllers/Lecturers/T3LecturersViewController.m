@@ -38,7 +38,7 @@ NSString *const T3LecturerToTimetableSegue = @"LecturerToTimetableSegue";
     [self.tableView registerNib:cellNib forCellReuseIdentifier:T3LecturerCellReussableIdentifier];
     self.tableView.rowHeight = [T3LecturerCell cellHeight];
     
-    self.navigationItem.title = @"Преподователи";
+    self.navigationItem.title = @"Преподаватели";
     
     [self setupFetchedResultController];
     [self checkIfNeedLoadAndLoad];

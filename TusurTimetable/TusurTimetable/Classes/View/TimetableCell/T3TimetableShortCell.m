@@ -17,7 +17,7 @@
 {
     self.numberLabel.text = [NSString stringWithFormat:@"%i.", [timetable.lessonNumber integerValue]];
     self.timeLabel.text = [timetable stringLessonTime];
- //   self.kindLabel.text = [NSString stringWithFormat:@"%i", [timetable.hide boolValue] ];
+    self.exclamationMarkImageView.hidden = ([timetable.note length] == 0);
     self.roomLabel.text = timetable.lectureHall;
     self.teacherLabel.text = timetable.teacher;
     self.shortNameLabel.text = [NSString stringWithFormat:@"%@ %@", timetable.shortName, [timetable stringForShortKind]];

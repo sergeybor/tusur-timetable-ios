@@ -59,7 +59,8 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
 - (void)configure
 {
     [self configureSession];
-    [self configureTimer];
+    [self configureReachability];
+//    [self configureTimer];
     
     self.tasks = [NSMutableDictionary dictionary];
 }
@@ -611,6 +612,11 @@ NSString *const teachersUrl = @"http://anisov.tomsk.ru/timetable/teachers.json";
         [self startUpdateFavouritesInTime:NO complite:nil];
     }
         
+}
+
+- (BOOL)isNetworkReachable
+{
+    return [self.hostReachability currentReachabilityStatus] != NotReachable;
 }
 
 @end

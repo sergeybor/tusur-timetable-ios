@@ -26,32 +26,37 @@
 
 - (void)showPlaceholderWithError:(NSError *)error
 {
-    [T3PlaceholderView showError:error
-                          inView:self.tableView
-                  buttonTapBlock:nil];
-    
+    if (self.isViewLoaded && self.view.window) {
+        [T3PlaceholderView showError:error
+                              inView:self.tableView
+                      buttonTapBlock:nil];
+    }
 }
 
 - (void)showAlertWithError:(NSError *)error
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
-                                                    message:error.localizedDescription
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Ок"
-                                          otherButtonTitles:nil];
+    if (self.isViewLoaded && self.view.window) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                        message:error.localizedDescription
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ок"
+                                              otherButtonTitles:nil];
     
-    [alert show];
+        [alert show];
+    }
 }
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Ок"
-                                          otherButtonTitles:nil];
+    if (self.isViewLoaded && self.view.window) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ок"
+                                              otherButtonTitles:nil];
     
-    [alert show];
+        [alert show];
+    }
 }
 
 @end
